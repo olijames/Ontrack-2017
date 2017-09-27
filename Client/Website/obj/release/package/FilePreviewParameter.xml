@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="portal-ecraft-co-nz-sea" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Projects\\Electracraft\ App\\trunk\\Client\\Website\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Projects\\Electracraft\ App\\trunk\\Client\\Website\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="ConnectionStringDebug-Web.config Connection String" description="" value="Data Source=itl-db-1.database.windows.net;Initial Catalog=itl-portal-ecraft-co-nz-sea;user=itl-portal-ecraft-co-nz@itl-db-1;password=nFc2Latc9m8xQxss;" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\Projects\\Electracraft\ App\\trunk\\Client\\Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ConnectionStringDebug']/@connectionString" />
+  </parameter>
+  <parameter name="ConnectionStringRelease-Web.config Connection String" description="" value="Data Source=itl-db-1.database.windows.net;Initial Catalog=itl-portal-ecraft-co-nz-sea;user=itl-portal-ecraft-co-nz@itl-db-1;password=nFc2Latc9m8xQxss;" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\Projects\\Electracraft\ App\\trunk\\Client\\Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ConnectionStringRelease']/@connectionString" />
+  </parameter>
+  <parameter name="ElectracraftClientWebsiteContext-Web.config Connection String" description="" value="data source=itl-db-1.database.windows.net;initial catalog=itl-portal-ecraft-co-nz-sea;user id=itl-portal-ecraft-co-nz@itl-db-1;MultipleActiveResultSets=True" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\Projects\\Electracraft\ App\\trunk\\Client\\Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ElectracraftClientWebsiteContext']/@connectionString" />
+  </parameter>
+</parameters>

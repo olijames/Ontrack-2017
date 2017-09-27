@@ -1,0 +1,513 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Electracraft.Framework.DataObjects;
+using Electracraft.Framework.DataAccess;
+using System.Web;
+using System.Web.UI;
+
+namespace Electracraft.Framework.BusinessRules
+{
+    public class BRSite : BRBase
+    {
+        private DASite _CurrentDASite;
+        private DASite CurrentDASite
+        {
+            get
+            {
+                if (_CurrentDASite == null)
+                    _CurrentDASite = new DASite(ConnectionString);
+                return _CurrentDASite;
+            }
+        }
+
+        /// <summary>
+        /// Creates a site.
+        /// </summary>
+        /// <param name="CreatedBy"></param>
+        /// <returns></returns>
+        public DOSite CreateSite(Guid CreatedBy)
+        {
+            DOSite Site = new DOSite();
+            Site.SiteID = Guid.NewGuid();
+            Site.CreatedBy = CreatedBy;
+            Site.VisibilityStatus = SiteVisibility.All;
+
+            return Site;
+        }
+
+        public List<DOBase> SelectToolBoxFiles(Guid siteID)
+        {
+            string query = "  select * from ToolBoxFile tf inner join FileUpload f on tf.FileID=f.FileID where tf.SiteID={0} order by tf.CreatedDate desc";
+           return CurrentDASite.SelectObjectsCustomQuery(typeof(DOFileUpload), query, siteID);
+        }
+
+        /// <summary>
+        /// Save an uploaded file.
+        /// </summary>
+        /// <param name="CreatedBy"></param>
+        /// <param name="PostedFile"></param>
+        /// <returns></returns>
+        public DOFileUpload SaveFile(Guid CreatedBy, Guid GroupID, HttpPostedFile PostedFile)
+        {
+            if (PostedFile == null) return null;
+
+            DOFileUpload File = new DOFileUpload();
+            File.FileID = Guid.NewGuid();
+            File.GroupID = GroupID;
+            File.Filename = PostedFile.FileName;
+            File.CreatedBy = CreatedBy;
+            BRJob job = new BRJob();
+            string Path = job.GetFilePathAbsolute(File);
+            CreateDirIfNotExists(System.IO.Path.GetDirectoryName(Path));
+
+            //Rename file if duplicate name.
+            if (System.IO.File.Exists(Path))
+            {
+                int CurrentVersion = 1;
+                string BaseFilename = File.Filename;
+
+                int dIndex = File.Filename.LastIndexOf('.');
+                if (dIndex < 0)
+                    throw new Exception("Invalid filename");
+
+                while (System.IO.File.Exists(Path))
+                {
+                    File.Filename = string.Concat(BaseFilename.Substring(0, dIndex), "-" + (++CurrentVersion).ToString(), BaseFilename.Substring(dIndex));
+                    Path = job.GetFilePathAbsolute(File);
+                }
+            }
+            PostedFile.SaveAs(Path);
+            File.FileType = job.CreateThumbnails(File, PostedFile);
+            CurrentDASite.SaveObject(File);
+
+            return File;
+        }
+
+        public void DeleteToolBoxFile(DOToolBoxFile toolBoxFile)
+        {
+            CurrentDASite.DeleteObject(toolBoxFile);
+        }
+
+        public DOToolBoxFile SelectToolBoxFileByFileID(Guid fileID)
+        {
+            return CurrentDASite.SelectObject(typeof(DOToolBoxFile), "FileID = {0}", fileID) as DOToolBoxFile;
+        }
+
+        public DOFileUpload SelectFileUpload(Guid fileID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveToolBoxFile(DOToolBoxFile tbf)
+        {
+            CurrentDASite.SaveObject(tbf);
+        }
+
+        public DOToolBoxFile CreateToolBoxFile(Guid CreatedBy, Guid SiteID, Guid FileID)
+        {
+            DOToolBoxFile tbf = new DOToolBoxFile();
+            tbf.ToolBoxFileID = Guid.NewGuid();
+            tbf.SiteID = SiteID;
+            tbf.FileID = FileID;
+            tbf.CreatedBy = CreatedBy;
+            return tbf;
+        }
+        
+        private void CreateDirIfNotExists(string Path)
+        {
+            if (!System.IO.Directory.Exists(Path))
+                System.IO.Directory.CreateDirectory(Path);
+        }
+
+        /// <summary>
+        /// Saves a site.
+        /// </summary>
+        /// <param name="Site"></param>
+        public void SaveSite(DOSite Site)
+        {
+            CurrentDASite.SaveObject(Site);
+        }
+
+        /// <summary>
+		/// Makes site visible to the contacts 
+		/// </summary>
+		public void UpdateContactSiteRecords(Guid siteId, Guid contractorId, Guid customerId, Guid createdBy)
+        {
+            UpdateContactSite(siteId, contractorId);
+            UpdateContactSite(siteId, customerId);
+            UpdateContactSite(siteId, createdBy);
+        }
+
+        /// <summary>
+		/// Create/update the contactsite record and make it visible to the contact
+		/// </summary>
+		/// <param name="siteId"></param>
+		/// <param name="contractorId"></param>
+		private void UpdateContactSite(Guid siteId, Guid contactId)
+        {
+            DOContactSite contactSite = SelectContactSite(siteId, contactId) ?? CreateContactSite(siteId, contactId);
+            contactSite.Active = true;
+            SaveContactSite(contactSite);
+        }
+        /// <summary>
+		/// Create a new contactsite record
+		/// </summary>
+		/// <param name="siteId"></param>
+		/// <param name="contactId"></param>
+		/// <returns></returns>
+		private DOContactSite CreateContactSite(Guid siteId, Guid contactId)
+        {
+            DOContactSite contactSite = new DOContactSite();
+            contactSite.ContactID = contactId;
+            contactSite.SiteID = siteId;
+            contactSite.ContactSiteID = Guid.NewGuid();
+
+            return contactSite;
+        }
+
+        /// <summary>
+        /// Deletes a site, or makes it inactive if it cannot be deleted.
+        /// </summary>
+        /// <param name="Site"></param>
+
+        public void DeleteSite(DOSite Site, Guid contactID)
+       {
+            try
+            {
+                //CurrentDASite.DeleteObject(Site);
+              //  Site.Active = false;
+               // CurrentDASite.SaveObject(Site);
+                SaveContactSite(false, Site.SiteID, contactID);
+               
+            }
+            catch(Exception exception)
+            {
+               
+                Site.Active = false;
+                CurrentDASite.SaveObject(Site);
+            }
+        }
+
+        /// <summary>
+        /// Selects a site.
+        /// </summary>
+        /// <param name="SiteID"></param>
+        public DOSite SelectSite(Guid SiteID)
+        {
+
+            return CurrentDASite.SelectObject(typeof(DOSite), "SiteID = {0} AND Active = 1 ORDER BY Address1", SiteID) as DOSite;
+
+        }
+        /// <summary>
+        /// Selects a site.
+        /// </summary>
+        /// <param name="SiteID"></param>
+        public DOSiteLessInfo SelectSiteLimitedInfo(Guid SiteID) 
+        {
+            StringBuilder query =new StringBuilder("select siteid,Address1,Address2,Address3,Address4,CreatedBy,CreatedDate,Active,SiteOwnerID from Site");
+            return
+                (DOSiteLessInfo)
+                    CurrentDASite.SelectQuery(typeof(DOSiteLessInfo), query,
+                        "SiteID = {0} AND Active = 1 ORDER BY Address1", SiteID);
+           
+        }
+
+        /// <summary>
+        /// Selects a site.
+        /// </summary>
+        /// <param name="SiteID"></param>
+        public DOSite SelectASite(Guid SiteID)
+        {
+            StringBuilder query = new StringBuilder(@"select siteid, Address1, Address2, Address3, Address4, CreatedBy, CreatedDate, Active, SiteOwnerID, CustomerFirstName,
+CustomerLastName, CustomerAddress1, CustomerAddress2, CustomerPhone, CustomerEmail, ContactID, VisibilityStatus from Site");
+            return
+                (DOSite)
+                    CurrentDASite.SelectQuery(typeof(DOSite), query,
+                        "SiteID = {0} AND Active = 1 ORDER BY Address1", SiteID);
+
+        }
+        /// <summary>
+        /// Selects every existing site.
+        /// </summary>
+        /// <param name="SiteID"></param>
+        public DOSite SelectSitebySiteID(Guid SiteID)
+        {
+            return CurrentDASite.SelectObject(typeof(DOSite), "SiteID = {0}", SiteID) as DOSite;
+        }
+        /// <summary>
+        /// Selects sites belonging to a contact.
+        /// </summary>
+        /// <param name="ContactID"></param>
+        /// <returns></returns>
+        public List<DOBase> SelectMySites(Guid ContactID)
+        {
+            return CurrentDASite.SelectObjects(typeof(DOSite), "ContactID = {0} AND Active = 1 ORDER BY Address1", ContactID);
+        }
+
+        /// <summary>
+        /// Select customer sites that are visible to a contact.
+        /// </summary>
+        /// <param name="ContactID"></param>
+        /// <param name="ViewingContactID"></param>
+        /// <returns></returns>
+        public List<DOBase> SelectCustomerSites(Guid CustomerID, Guid ContractorID)
+        {
+            string Query = 
+@"SELECT s.* FROM Site s 
+LEFT JOIN Customer c ON s.ContactID = c.ContactID 
+WHERE c.CustomerID = {0} AND s.Active = 1 
+AND (s.VisibilityStatus = 2 OR 
+(s.VisibilityStatus = 1 AND {1} IN (SELECT ContactID FROM SiteVisibility WHERE SiteID = s.SiteID)))
+ORDER BY Address1";
+            return CurrentDASite.SelectObjectsCustomQuery(typeof(DOSite), Query, CustomerID, ContractorID);
+//            return CurrentDASite.SelectObjects(typeof(DOSite), "CustomerID = {0} ORDER BY Address1", CustomerID);
+        }
+        /// <summary>
+        /// Select customer sites that the customer has given you permission to access
+        /// </summary>
+        /// <param name=""></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public List<DOBase> SelectCustomerSitesFromContactSites(Guid CustomerID, Guid ContactID)
+        {
+            string Query = @"select  distinct site.* from ContactSite CS1, ContactSite, site where site.siteid=cs1.SiteID and cs1.SiteID = ContactSite.SiteID and cs1.contactid={0} and ContactSite.ContactID={1}";
+            return CurrentDASite.SelectObjectsCustomQuery(typeof(DOSite), Query, CustomerID, ContactID);
+        }
+
+
+
+
+
+        public List<DOBase> SelectContracteeSitesFromContactSites(Guid ContracteeID, Guid ContactID)
+        {
+            string Query = @"WITH SiteIDs as (SELECT DISTINCT s.SiteID FROM ContactSite s
+            LEFT JOIN Job j ON j.SiteID = s.SiteID
+            LEFT JOIN Task t ON j.JobID = t.JobID
+            WHERE(j.JobOwner =  {0})
+            OR(t.TaskOwner =  {0} AND t.ContractorID =  {1})) 
+            SELECT * FROM ContactSite s INNER JOIN SiteIDs ON s.SiteID = SiteIDs.SiteID WHERE s.Active = 1";
+            return CurrentDASite.SelectObjectsCustomQuery(typeof(DOContactSite), Query, ContracteeID, ContactID);
+        }
+
+
+        /// <summary>
+        /// Selects sites that a contact is subcontracting out to a particular user.
+        /// </summary>
+        /// <param name="ContracteeID"></param>
+        /// <param name="ContactID"></param>
+        /// <returns></returns>
+        public List<DOBase> SelectContracteeSites(Guid ContracteeID, Guid ContactID)
+        {
+            //@"SELECT s.* FROM Site s 
+            //LEFT JOIN Job j ON 
+            //s.SiteID = j.SiteID 
+            //LEFT JOIN JobContractor jc ON j.JobID = jc.JobID 
+            //WHERE s.JobOwner = {0} AND jc.ContactID = {1}";
+
+            //A job owner can subcontract a job (Job Contractors Table)
+            //or a task owner can subcontract a task.
+            //In either case the site is visible to the subcontractor.
+
+            //            string Query =
+            //@"WITH SiteIDs AS (
+            //            SELECT DISTINCT s.SiteID FROM Site s
+            //            LEFT JOIN Job j ON j.SiteID = s.SiteID
+            //            LEFT JOIN JobContractor jc ON j.JobID = jc.JobiD
+            //            LEFT JOIN Task t ON j.JobID = t.JobID
+            //            WHERE (j.JobOwner = {0} AND jc.ContactID = {1}) 
+            //            OR (t.TaskOwner = {0} AND t.ContractorID = {1}))
+            //            //            SELECT * FROM Site s INNER JOIN SiteIDs ON s.SiteID = SiteIDs.SiteID WHERE s.Active = 1 ORDER BY s.Address1";
+            //
+            //Old query           
+            //string Query =
+            //@"WITH SiteIDs AS (
+            //            SELECT DISTINCT s.SiteID FROM Site s
+            //            LEFT JOIN Job j ON j.SiteID = s.SiteID
+            //            LEFT JOIN JobContractor jc ON j.JobID = jc.JobiD
+            //            LEFT JOIN Task t ON j.JobID = t.JobID
+            //            WHERE (j.JobOwner = {0} AND jc.ContactID = {1}) 
+            //            OR (t.TaskOwner = {0} AND t.ContractorID = {1}))
+            //            SELECT* FROM Site si, ContactSite s INNER JOIN SiteIDs ON s.SiteID = SiteIDs.SiteID WHERE s.Active = 1 and si.SiteID = s.SiteID ORDER BY si.Address1";
+            //New query to avoid repeating sites
+           /** string Query =
+                @"WITH SiteIDs AS (
+            SELECT DISTINCT s.SiteID FROM Site s
+            LEFT JOIN Job j ON j.SiteID = s.SiteID
+            LEFT JOIN Task t ON j.JobID = t.JobID
+            WHERE (j.JobOwner = {0}) 
+            OR (t.TaskOwner = {0} AND t.ContractorID = {1}))
+            SELECT distinct si.* FROM Site si, ContactSite s INNER JOIN SiteIDs ON s.SiteID = SiteIDs.SiteID WHERE s.Active = 1 and si.SiteID = s.SiteID";
+**/
+/**To find the sites from contact site table directly**/
+//string Query= "select * from Site where SiteID in (select  distinct SiteID from ContactSite where ContactID = {0} and active = 1)";
+
+            //To find sites for the current contractor
+            string Query =
+                @"select distinct s.SiteID,s.SiteOwnerID,s.Address1,s.Address2,s.Address3,s.Address4,c.FirstName,c.LastName,cs.ContactID,s.CreatedBy,s.CreatedDate,s.Active from Site s
+  join ContactSite cs
+  on cs.SiteID = s.SiteID
+  join Contact c
+  on c.ContactID = s.SiteOwnerID
+  where cs.ContactID = {0} and cs.Active = 1 and s.active=1"; //jared added s.active=1   31/10/16
+return CurrentDASite.SelectObjectsCustomQuery(typeof(DOSiteInfo), Query, ContracteeID, ContactID);
+        }
+
+        //public List<DOBase> SelectSitesforCustomer(Guid currentCustomerID)
+        //{
+        //  string query="select* from Site where SiteOwnerID ={0} or ContactID = {0}";
+        //    return CurrentDASite.SelectObjectsCustomQuery(typeof(DOSite), query, currentCustomerID);
+        //}
+
+        //        public List<DOBase> SelectContactSites(Guid ContactID)
+        //        {
+        //            //A site shows up in a contact's screen if:
+        //            //- If they have subcontracted a job or task on that site.
+        //            //- If the site belongs to one of their customers.
+        //            string Query =
+        //    @"WITH JobsSubContracted AS (
+        //SELECT j.JobID FROM Job j INNER JOIN JobContractor jc ON j.JobiD = jc.JobID WHERE j.JobOwner = {0}
+        //), CustSites AS (
+        //SELECT s.SiteID FROM Site s WHERE s.ContactID = {0}
+        //), SiteIDs AS (
+        //SELECT DISTINCT s.SiteID FROM Site s
+        //LEFT JOIN Job j ON j.SiteID = s.SiteID
+        //LEFT JOIN Task t ON t.JobID = j.JobID
+        //WHERE t.TaskOwner = {0} OR j.JobID IN (SELECT JobID FROM JobsSubContracted) OR s.SiteID IN (SELECT SiteID FROM CustSites)
+        //)
+        //SELECT s.* FROM Site s INNER JOIN SiteIDs ON s.SiteID = SiteIDs.SiteID WHERE s.Active = 1 ORDER BY s.Address1";
+
+        //            return CurrentDASite.SelectObjectsCustomQuery(typeof(DOSite), Query, ContactID);
+        //        }
+
+        /**
+        To select sites with contactID
+        **/
+        public List<DOBase> SelectContactSites(Guid ContactID)
+        {
+            return CurrentDASite.SelectObjects(typeof(DOSite), "SiteOwnerID = {0} ORDER BY Address1", ContactID);
+        }
+        /**
+        To save contactsite with siteid
+        **/
+
+
+        public void SaveContactSite(bool flag,Guid siteID,Guid contactID)
+        {
+            string query = "update ContactSite set Active={0} where SiteID={1} and contactid={2}";
+            CurrentDASite.ExecuteScalar(query,flag,siteID,contactID);
+        }
+
+
+
+        //Select all sites for a customer from ContactSite table
+        public List<DOBase> SelectSitesforCustomer(Guid contracteerID,Guid currentContactID)
+        {
+            //string query = "select * from Site s, ContactSite cs where cs.SiteID=s.SiteID and cs.SiteID in (select SiteID from Site where SiteOwnerID={0} or ContactID={0})";
+            // string query = "select * from ContactSite cs,Site s,Contact c where cs.SiteID=s.SiteID and c.ContactID=cs.ContactID and cs.SiteID in (select SiteID from Site where SiteOwnerID={0} or ContactID={0})";
+            //string query =@"select S1.SiteID, S1.ContactID, S2.ContactID, s.Address1,s.Address2,s.Address3,s.Address4,s.SiteOwnerID,c.FirstName,c.LastName from Contact c,ContactSite S1 inner join ContactSite S2 on S1.SiteID = S2.SiteID inner join Site s on s1.siteid = s.siteid where s1.ContactID ={0} and s2.ContactID ={1} and S1.ContactID=c.ContactID";
+            //string query = "select s.*,c.* from Contact c,ContactSite S1 inner join ContactSite S2 on S1.SiteID = S2.SiteID inner join Site s on s1.siteid = s.siteid where s1.ContactID ={0} and s2.ContactID ={1} and S1.ContactID=c.ContactID";
+            //            string query = @"with siteids as (select SiteID,ContactID from ContactSite cs where cs.ContactID={0})
+            //select s.siteid, s.Address1,s.Address2,s.Address3,s.Address4,s.SiteOwnerID,s.CreatedBy,s.CreatedDate, c.ContactID,s.Active,c.FirstName,c.LastName from Contact c inner join siteids on c.contactid=siteids.ContactID inner join Site s on s.SiteID=siteids.SiteID and s.Active = 1";
+            
+            //Query to populate from contact sites table
+            string query = @"select distinct s.SiteID,s.SiteOwnerID,s.Address1,s.Address2,s.Address3,s.Address4,c.FirstName,c.LastName,
+c.ContactID,s.CreatedBy,s.CreatedDate,s1.Active
+from Contact c, ContactSite S1 inner join ContactSite S2 on S1.SiteID = S2.SiteID
+inner join Site s on s1.siteid = s.siteid where s1.ContactID = {0} 
+and s2.ContactID = {1} and S1.ContactID = c.ContactID order by s1.Active Desc";
+            return CurrentDASite.SelectObjectsCustomQuery(typeof(DOSiteInfo),query, contracteerID,currentContactID);
+        }
+
+        public List<DOBase> SelectActiveContactSites(Guid contactID)
+        {
+            return CurrentDASite.SelectObjects(typeof(DOContactSite), "contactid={0} and active=1", contactID);
+        }
+
+        //Save site to ContactSite
+        public void SaveContactSite(DOContactSite contactSite)
+        {
+            CurrentDASite.SaveObject(contactSite);
+        }
+
+        #region Visibility
+        /// <summary>
+        /// CreateSiteVisibility
+        /// </summary>
+        /// <param name="OwnerID"></param>
+        /// <param name="SiteID"></param>
+        /// <param name="ContactID"></param>
+        /// <returns></returns>
+        public DOSiteVisibility CreateSiteVisiblity(Guid OwnerID, Guid SiteID, Guid ContactID)
+        {
+            DOSiteVisibility sv = new DOSiteVisibility();
+            sv.SVID = Guid.NewGuid();
+            sv.CreatedBy = OwnerID;
+            sv.SiteID = SiteID;
+            sv.ContactID = ContactID;
+            return sv;
+        }
+
+        /// <summary>
+        /// SaveSiteVisibility
+        /// </summary>
+        /// <param name="sv"></param>
+        public void SaveSiteVisibility(DOSiteVisibility sv)
+        {
+            CurrentDASite.SaveObject(sv);
+        }
+
+        /// <summary>
+        /// DeleteSiteVisibility
+        /// </summary>
+        /// <param name="sv"></param>
+        public void DeleteSiteVisibility(DOSiteVisibility sv)
+        {
+            CurrentDASite.DeleteObject(sv);
+        }
+        
+        /// <summary>
+        /// SelectSiteVisibility
+        /// </summary>
+        /// <param name="SVID"></param>
+        /// <returns></returns>
+        public DOSiteVisibility SelectSiteVisibility(Guid SVID)
+        {
+            return CurrentDASite.SelectObject(typeof(DOSiteVisibility), "SVID = {0}", SVID) as DOSiteVisibility;
+        }
+
+        public List<DOBase> SelectSiteVisibilities(Guid SiteID)
+        {
+            return CurrentDASite.SelectObjects(typeof(DOSiteVisibility), "SiteID = {0}", SiteID);
+        }
+        #endregion
+
+        public DOContactSite SelectContactSite(Guid siteId, Guid contractorId)
+        {
+            return CurrentDASite.SelectObject(typeof(DOContactSite), "SiteID={0} and contactID={1}", siteId,
+                contractorId) as DOContactSite;
+        }
+
+        public List<DOBase> SelectActiveSitesforContractorCustomer(Guid contactorId, Guid contactIdCustomer)
+        {
+            string query =
+                @"  select s1.contactsiteid,s1.ContactID,s1.Active,s1.SiteID,s1.createdby,s1.createddate from ContactSite s1,contactsite s2 where s1.ContactID={0} and 
+             s2.ContactID={1} and s1.SiteID=s2.SiteID and s1.Active=s2.Active and s1.Active=1";
+            return CurrentDASite.SelectObjectsCustomQuery(typeof(DOContactSite), query, contactorId, contactIdCustomer);
+        }
+
+
+        //Tony added insert(copy & paste) function 5.11.2016
+        public void ShareContactSite(Guid siteID, Guid fromContactID, Guid toContactID)
+        {
+            string query = "INSERT INTO contactSite(ContactSiteID, ContactID, SiteID, CreatedBy, CreatedDate, Active, flag) " +
+               "SELECT NewID(), '"+ toContactID + "', SiteID, CreatedBy, CreatedDate, Active, flag FROM ContactSite " +
+               "WHERE SiteID={0} AND ContactID={1}";
+
+            CurrentDASite.ExecuteScalar(query, siteID, fromContactID);
+        }
+
+
+    }
+}

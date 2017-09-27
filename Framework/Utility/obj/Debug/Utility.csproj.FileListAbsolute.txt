@@ -1,0 +1,54 @@
+D:\Electracraft\trunk\ontrack\Framework\Utility\bin\Debug\Electracraft.Framework.Utility.dll
+D:\Electracraft\trunk\ontrack\Framework\Utility\bin\Debug\Electracraft.Framework.Utility.pdb
+D:\Electracraft\trunk\ontrack\Framework\Utility\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft\trunk\ontrack\Framework\Utility\bin\Debug\EntityFramework.dll
+D:\Electracraft\trunk\ontrack\Framework\Utility\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft\trunk\ontrack\Framework\Utility\bin\Debug\EntityFramework.xml
+D:\Electracraft\trunk\ontrack\Framework\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+D:\Electracraft\trunk\ontrack\Framework\Utility\obj\Debug\Electracraft.Framework.Utility.dll
+D:\Electracraft\trunk\ontrack\Framework\Utility\obj\Debug\Electracraft.Framework.Utility.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Framework\Utility\bin\Debug\Electracraft.Framework.Utility.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\Utility\bin\Debug\Electracraft.Framework.Utility.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Framework\Utility\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\Utility\bin\Debug\EntityFramework.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\Utility\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Framework\Utility\bin\Debug\EntityFramework.xml
+D:\Electracraft\trunk\ontrack - 4.5\Framework\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+D:\Electracraft\trunk\ontrack - 4.5\Framework\Utility\obj\Debug\Electracraft.Framework.Utility.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\Utility\obj\Debug\Electracraft.Framework.Utility.pdb
+D:\OnTrack-Git\Framework\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+D:\OnTrack-Git\Framework\Utility\bin\Debug\Electracraft.Framework.Utility.dll
+D:\OnTrack-Git\Framework\Utility\bin\Debug\Electracraft.Framework.Utility.pdb
+D:\OnTrack-Git\Framework\Utility\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\OnTrack-Git\Framework\Utility\bin\Debug\EntityFramework.dll
+D:\OnTrack-Git\Framework\Utility\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\OnTrack-Git\Framework\Utility\bin\Debug\EntityFramework.xml
+D:\OnTrack-Git\Framework\Utility\obj\Debug\Electracraft.Framework.Utility.dll
+D:\OnTrack-Git\Framework\Utility\obj\Debug\Electracraft.Framework.Utility.pdb
+D:\Electracraft App\Framework\Utility\bin\Debug\Electracraft.Framework.Utility.dll
+D:\Electracraft App\Framework\Utility\bin\Debug\Electracraft.Framework.Utility.pdb
+D:\Electracraft App\Framework\Utility\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft App\Framework\Utility\bin\Debug\EntityFramework.dll
+D:\Electracraft App\Framework\Utility\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft App\Framework\Utility\bin\Debug\EntityFramework.xml
+D:\Electracraft App\Framework\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+D:\Electracraft App\Framework\Utility\obj\Debug\Electracraft.Framework.Utility.dll
+D:\Electracraft App\Framework\Utility\obj\Debug\Electracraft.Framework.Utility.pdb
+D:\Projects\OnTrack-Git\Framework\Utility\bin\Debug\Electracraft.Framework.Utility.dll
+D:\Projects\OnTrack-Git\Framework\Utility\bin\Debug\Electracraft.Framework.Utility.pdb
+D:\Projects\OnTrack-Git\Framework\Utility\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Projects\OnTrack-Git\Framework\Utility\bin\Debug\EntityFramework.dll
+D:\Projects\OnTrack-Git\Framework\Utility\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Projects\OnTrack-Git\Framework\Utility\bin\Debug\EntityFramework.xml
+D:\Projects\OnTrack-Git\Framework\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+D:\Projects\OnTrack-Git\Framework\Utility\obj\Debug\Electracraft.Framework.Utility.dll
+D:\Projects\OnTrack-Git\Framework\Utility\obj\Debug\Electracraft.Framework.Utility.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\Utility\bin\Debug\Electracraft.Framework.Utility.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\Utility\bin\Debug\Electracraft.Framework.Utility.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\Utility\bin\Debug\Electracraft.Framework.DataObjects.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\Utility\bin\Debug\EntityFramework.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\Utility\bin\Debug\Electracraft.Framework.DataObjects.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\Utility\bin\Debug\EntityFramework.xml
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\Utility\obj\Debug\Electracraft.Framework.Utility.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\Utility\obj\Debug\Electracraft.Framework.Utility.pdb

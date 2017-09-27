@@ -1,0 +1,469 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
+using System.Web;
+using System.Web.Http;
+using Electracraft.Framework.BusinessRules;
+using Electracraft.Framework.DataObjects;
+using Electracraft.Framework.Utility;
+using Electracraft.Framework.Web;
+
+
+namespace Electracraft.Client.Website.Controllers
+{
+
+    public class TasksController : ApiController
+    {
+        public struct ContactList
+        {
+            public string type { get; set; }
+            public List<DOBase> Contact { get; set; }
+
+        }
+
+        List<DOBase> taskList = new List<DOBase>();
+
+        readonly BRJob _currentBrJob = new BRJob();
+        readonly BRContact _currentBrContact = new BRContact();
+        BRTradeCategory _currentBrTradeCategory = new BRTradeCategory();
+        BRSite _currentBrSite = new BRSite();
+        PageBase pb = new PageBase();
+
+        private string _errorMessage;
+        private SessionContext _currentSessionContext;
+        public SessionContext CurrentSessionContext
+        {
+            get
+            {
+                var session = HttpContext.Current.Session;
+                _currentSessionContext = session[Constants.SessionCurrentContext] as SessionContext;
+                return _currentSessionContext;
+            }
+        }
+        /// <summary>
+        /// To populate trade categories during Create/Edit task
+        /// </summary>
+        /// <returns>List of tradecategories</returns>
+        [HttpGet]
+        [ActionName("TradeCategories")]
+        public List<DOBase> GetTradeCategories()
+        {
+            List<DOBase> tradeCategories = _currentBrTradeCategory.SelectTradeCategories();
+            return tradeCategories;
+        }
+
+        /// <summary>
+        /// Get the default trade cateogry for contractor while creating new task
+        /// </summary>
+        /// <param name="contractorId">contractor for the task</param>
+        /// <returns></returns>
+        [HttpGet]
+        [ActionName("GetDefaultTG")]
+        public DOTradeCategory GetContractorsDefaultTradeCategory(Guid id)
+        {
+            DOBase tradeCategory = _currentBrTradeCategory.SelectDefaultTradeCategory(id);
+            return tradeCategory as DOTradeCategory;
+        }
+
+        /// <summary>
+        /// Get all the tasksby taking jobID from current session
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [ActionName("TaskByJobID")]
+        public List<DOBase> GetTasks()
+        {
+            taskList = _currentBrJob.SelectTasks(CurrentSessionContext.CurrentJob.JobID);
+            return taskList;
+        }
+        /// <summary>
+        /// Select all materials
+        /// </summary>
+        /// <param name="id">TaskID</param>
+        /// <returns>Materials list</returns>
+        [HttpGet]
+        [ActionName("Materials")]
+        public List<DOBase> GetMaterials(Guid id)
+        {
+            List<DOBase> materials = _currentBrJob.SelectTaskMaterialsList(id);
+            return materials;
+        }
+        /// <summary>
+        /// Get the contact information 
+        /// </summary>
+        /// <param name="id">contact id</param>
+        /// <returns>contact info</returns>
+        [HttpGet]
+        [ActionName("Contact")]
+        public DOContactInfo GetContact(Guid id)
+        {
+            return _currentBrContact.SelectAContact(id);
+        }
+
+        /// <summary>
+        /// Get all the tasks by JobID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>List of tasks</returns>
+        [HttpGet]
+        [ActionName("TaskByJobID")]
+        public List<DOBase> GetTasks(Guid id)
+        {
+            taskList = _currentBrJob.SelectTasks(id);
+            return taskList;
+        }
+        /// <summary>
+        /// Get all the tasks by TaskID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [ActionName("TaskByTaskID")]
+        public DOTask GetTaskbyTaskId(Guid id)
+        {
+            DOTask task = new DOTask();
+            if (id != Guid.Empty)
+            {
+                task = _currentBrJob.SelectTask(id);
+            }
+            return task;
+        }
+        /// <summary>
+        /// Get job details
+        /// </summary>
+        /// <param name="id">jobid</param>
+        /// <returns></returns>
+        [HttpGet]
+        [ActionName("Job")]
+        public DOJob GetJob(Guid id)
+        {
+            DOJob job = _currentBrJob.SelectJob(id);
+            return job;
+        }
+        /// <summary>
+        /// Get all the contractors
+        /// </summary>
+        /// <param name="id">job id</param>
+        /// <param name="tradeCategoryId">Trade category id of task</param>
+        /// <param name="currentContactId"> current entity through which we are creating this task</param>
+        /// <param name="loggedInContactId">The logged in contact id</param>
+        /// <returns>list of job contractors</returns>
+        [HttpGet]
+        [ActionName("Contractors")]
+        public List<ContactList> GetContractors(Guid id, Guid tradeCategoryId, Guid currentContactId, Guid loggedInContactId)
+        {
+
+            List<ContactList> contractors = new List<ContactList>();
+            //Trade category list
+            List<DOBase> tradeCategoryJobContractors = _currentBrContact.GetTradeCategoryJobContractors(id, tradeCategoryId);
+            contractors.Add(new ContactList()
+            {
+                Contact = tradeCategoryJobContractors,
+                type = "TadeCategoryJobContractors"
+            });
+
+
+            //Job Contractors 
+            List<DOBase> jobContractors = _currentBrContact.GetJobContractors(id);
+
+            contractors.Add(new ContactList()
+            {
+                Contact = jobContractors,
+                type = "JobContractors"
+            });
+
+            //My contractors
+            List<DOBase> myContractors = _currentBrContact.SelectMyContractors(currentContactId);
+
+            contractors.Add(new ContactList()
+            {
+                Contact = myContractors,
+                type = "MyContractors"
+            });
+
+            //Other contractors
+            List<DOBase> otherContractors = _currentBrContact.SelectOtherContractors(loggedInContactId);
+            contractors.Add(new ContactList()
+            {
+                Contact = otherContractors,
+                type = "OtherContractors"
+            });
+            return contractors;
+        }
+
+        /// <summary>
+        /// Find all the possible customers for a task
+        /// </summary>
+        /// <param name="id">job id</param>
+        /// <param name="currentContactId"> current entity through which we are creating this task</param>
+        /// <param name="loggedInContactId">The logged in contact id</param>
+        /// <returns>list of customers</returns>
+        [HttpGet]
+        [ActionName("Customers")]
+        public List<ContactList> GetCustomers(Guid id, Guid currentContactId, Guid loggedInContactId)
+        {
+            List<ContactList> customers = new List<ContactList>();
+            //Job Contractors as they can be possible customers
+            List<DOBase> jobContractors = _currentBrContact.GetJobContractors(id);
+            customers.Add(new ContactList()
+            {
+                Contact = jobContractors,
+                type = "JobContractors"
+            });
+            //My contractors
+            List<DOBase> myContractors = _currentBrContact.SelectMyContractors(currentContactId);
+
+            customers.Add(new ContactList()
+            {
+                Contact = myContractors,
+                type = "MyContractors"
+            });
+
+            //Other contractors
+            List<DOBase> otherContractors = _currentBrContact.SelectOtherContractors(loggedInContactId);
+            customers.Add(new ContactList()
+            {
+                Contact = otherContractors,
+                type = "OtherContractors"
+            });
+
+            return customers;
+        }
+        /// <summary>
+        /// Get all the labour
+        /// </summary>
+        /// <param name="id">task id</param>
+        /// <returns>List of labour</returns>
+        [HttpGet]
+        [ActionName("Labour")]
+        public List<DOBase> GetLabour(Guid id)
+        {
+            List<DOBase> taskLabour = _currentBrJob.SelectTaskLabours(id);
+            return taskLabour;
+        }
+
+        /// <summary>
+        /// Get the job files
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [ActionName("JobFiles")]
+        public List<DOBase> GetJobFies(Guid id)
+        {
+        
+            List<DOBase> FileList = _currentBrJob.SelectFilesForJob(id);
+            return FileList;
+        }
+
+        /// <summary>
+        /// Get the Task files
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [ActionName("TaskFiles")]
+        public List<DOBase> GetTaskFiles(Guid id)
+        {
+
+            List<DOBase> FileList = _currentBrJob.SelectFilesForTask(id);
+            return FileList;
+        }
+
+
+
+
+        /// <summary>
+        /// update a task
+        /// </summary>
+        /// <param name="id">task id</param>
+        /// <returns>update a task</returns>
+        [HttpPut]     // 
+    [ActionName("Update")] //olly calls this like: task/update/
+    public DOTask Save(Guid id, string startDate = "", string endDate = "", string description = "", string contractorID = "",
+        string taskName = "", string status = "", string tradeCategoryId = "", string taskCustomerId = "") //"save" is
+    {
+        bool taskchange = false;
+        DOTask task = _currentBrJob.SelectTask(id);
+        if (startDate != "")
+        {
+            task.StartDate = DateTime.Parse(startDate);
+            taskchange = true;
+        }
+        if (endDate != "")
+        {
+            task.EndDate = DateTime.Parse(endDate);
+            taskchange = true;
+        }
+        if (description != "")
+        {
+            task.Description = description;
+            taskchange = true;
+        }
+        if (contractorID != "")
+        {
+            task.ContractorID = Guid.Parse(contractorID);
+            taskchange = true;
+        }
+        if (taskName != "")
+        {
+            task.TaskName = taskName;
+            taskchange = true;
+        }
+        if (status != "")
+        {
+            DOTask.TaskStatusEnum s = (DOTask.TaskStatusEnum)Enum.Parse(typeof(DOTask.TaskStatusEnum), status);
+            if (s == DOTask.TaskStatusEnum.Complete)
+            {
+                Validations.Validations validateObj = new Validations.Validations();
+                bool hasActual = validateObj.ValidateMaterialsLabour(task.TaskID);
+                if (!hasActual)
+                {
+                    _errorMessage = "The task '" + task.TaskName +
+                                   "' cannot be completed because no materials or labour have been assigned.";
+                    throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Conflict)
+                    {
+                        Content = new StringContent(_errorMessage)
+                    });
+                }
+                else
+                {
+	                task.Status = s;
+                }
+
+            }
+            else if (s == DOTask.TaskStatusEnum.Incomplete)
+            {
+                task.Status = s;
+            }
+            else if (s == DOTask.TaskStatusEnum.Invoiced)
+            {
+                if (task.Status == DOTask.TaskStatusEnum.Complete || task.Status == DOTask.TaskStatusEnum.Paid)
+                    task.Status = s;
+            }
+            else if (s == DOTask.TaskStatusEnum.Paid)
+            {
+                if (task.Status == DOTask.TaskStatusEnum.Invoiced)
+                    task.Status = s;
+            }
+            else
+            {
+                _errorMessage = "The task '" + task.TaskName +
+                                 "' cannot be " + s + " unless it is " + task.Status;
+                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Conflict)
+                {
+                    Content = new StringContent(_errorMessage)
+                });
+            }
+            taskchange = true;
+        }
+        if (tradeCategoryId != "")
+        {
+            task.TradeCategoryID = Guid.Parse(tradeCategoryId);
+            taskchange = true;
+        }
+        if (taskCustomerId != "")
+        {
+            task.TaskCustomerID = Guid.Parse(taskCustomerId);
+            taskchange = true;
+        }
+        if (taskchange)
+        {
+            _currentBrJob.SaveTask(task);
+        }
+		
+        return task;
+    }
+
+
+
+
+    /// <summary>
+    /// Add a task
+    /// </summary>
+    /// <param name="id">job id, contact id (creating contact)</param>
+    /// <returns>Adds a new task</returns> //Jared created
+    [HttpPut]
+    [ActionName("AddTask")]
+    public DOTask AddTask(Guid id, Guid contactId, string taskName, Guid tradeCategoryId, Guid taskCustomerId,
+        Guid siteId, Guid contractorId, string taskDesc = "", string taskType = "",
+        string startDate = "", string endDate = "", string startMinute = "",
+        string endMinute = "", string appointment = "",
+        string status = ""
+      )
+    {
+
+        string PendingContractorEmail = null;
+
+        // todo if(CurrentSessionContext.CurrentJob.JobID=id) validate the job coming from the frontend to the currentsession
+
+        DOTask newTask = _currentBrJob.CreateTask(id, contactId);
+
+        newTask.TaskNumber = _currentBrJob.GetTaskNumber(id);
+
+        //For new tasks, the ParentTaskID is 000... as for amended tasks it's the taskid of existing task.
+        newTask.ParentTaskID = Guid.Parse("00000000-0000-0000-0000-000000000000");
+        //todo ask Jared about the PendingTaskContractor functionality to include here with pending email id
+        newTask.ContractorID = contractorId;
+
+
+        newTask.TaskName = taskName;
+        newTask.Description = taskDesc;
+        newTask.TaskOwner = contactId;
+        //todo ask Jared, if tradecategory is mandatory?
+
+        if (tradeCategoryId != Guid.Empty)
+        {
+            newTask.TradeCategoryID = tradeCategoryId;
+        }
+
+        if (taskType != "")
+        {
+            DOTask.TaskTypeEnum tt = (DOTask.TaskTypeEnum)Enum.Parse(typeof(DOTask.TaskTypeEnum), taskType);
+            newTask.TaskType = tt;
+        }
+        else
+        {
+            newTask.TaskType = DOTask.TaskTypeEnum.Standard;
+        }
+
+        if (startMinute != "")
+        {
+            newTask.StartMinute = int.Parse(startMinute);
+            //   taskchange = true;
+        }
+        if (endMinute != "")
+        {
+            newTask.EndMinute = int.Parse(endMinute);
+            //    taskchange = true;
+        }
+        if (startDate != "")
+        {
+            newTask.StartDate = DateTime.Parse(startDate);
+            // taskchange = true;
+        }
+        if (endDate != "")
+        {
+            newTask.EndDate = DateTime.Parse(endDate);
+            //     taskchange = true;
+        }
+
+        //todo ask Jared, what value do we expect here? Default is true/flase?
+        if (appointment != "")
+        {
+            newTask.Appointment = false;
+            //  taskchange = true;
+        }
+        newTask.TaskCustomerID = taskCustomerId;
+        //todo validate siteid with the currentsession's currentsite's siteid
+        newTask.SiteID = siteId;
+        _currentBrJob.SaveTask(newTask);
+        _currentBrJob.UpdateContactRecords(newTask.JobID, newTask.ContractorID, newTask.TaskCustomerID, newTask.CreatedBy);
+        _currentBrSite.UpdateContactSiteRecords(newTask.SiteID, newTask.ContractorID, newTask.TaskCustomerID, newTask.CreatedBy);
+        return newTask;
+    }
+
+
+}
+}

@@ -1,0 +1,1209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E0ABBBDB-D4C1-4615-9547-39C9E999C5BB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Electracraft.Client.Website</RootNamespace>
+    <AssemblyName>Electracraft.Client.Website</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabases>false</PublishDatabases>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.5.7.1005, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AjaxControlToolkit.7.1005\lib\45\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AjaxMin, Version=4.97.4951.28478, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Html5Asp, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Html5Asp.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Xero.Api, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xero.Api.1.0.0.13\lib\net40-Client\Xero.Api.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xero.Api.Example.Applications, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xero.API.SDK.2.2.0.0\lib\net40\Xero.Api.Example.Applications.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xero.Api.Example.TokenStores, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xero.API.SDK.2.2.0.0\lib\net40\Xero.Api.Example.TokenStores.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XeroApi, Version=1.1.0.33, Culture=neutral, PublicKeyToken=3de03a85ae0f7251, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XeroAPI.Net.1.1.0.33\lib\XeroApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XeroApi.Validation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XeroApi.Validation.2.1.4.3\lib\net45\XeroApi.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\AjaxMin.dll" />
+    <Content Include="bin\Electracraft.Client.Website.dll" />
+    <Content Include="bin\Electracraft.Client.Website.dll.config" />
+    <Content Include="bin\Electracraft.Framework.BusinessRules.dll" />
+    <Content Include="bin\Electracraft.Framework.DataAccess.dll" />
+    <Content Include="bin\Electracraft.Framework.DataObjects.dll" />
+    <Content Include="bin\Electracraft.Framework.Utility.dll" />
+    <Content Include="bin\Electracraft.Framework.Web.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Html5Asp.dll" />
+    <Content Include="bin\HtmlAgilityPack.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Web.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="Clickback.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="image\ico-error.jpg" />
+    <Content Include="image\ico-info.jpg" />
+    <Content Include="image\ico-warning.png" />
+    <Content Include="image\share-512.png" />
+    <Content Include="lib\Html5Asp.dll" />
+    <Content Include="MaterialInput.aspx" />
+    <Content Include="Private\AddOns.aspx" />
+    <Content Include="Private\AddMaterialToVehicle.aspx" />
+    <Content Include="Private\Connections.aspx" />
+    <Content Include="Private\ImportSupplierInvoices.aspx" />
+    <Content Include="Private\Accounts.aspx" />
+    <Content Include="Private\Admin\CompanyDetails.aspx" />
+    <Content Include="Private\Admin\IndividualDetails.aspx" />
+    <Content Include="Private\Admin\ManageUsers.aspx" />
+    <Content Include="Private\Admin\Settings.aspx" />
+    <Content Include="Private\Calendar.aspx" />
+    <Content Include="Private\ChangePassword.aspx" />
+    <Content Include="Private\CompanyClose.aspx" />
+    <Content Include="Private\CompanyDetails.aspx" />
+    <Content Include="Private\ContactHome.aspx" />
+    <Content Include="Private\CustomerDetails.aspx" />
+    <Content Include="Private\CustomerHome.aspx" />
+    <Content Include="Private\EmployeeDetails.aspx" />
+    <Content Include="Private\EmployeeInfo.aspx" />
+    <Content Include="Private\JobsToInvoice.aspx" />
+    <Content Include="Private\JobTemplateInput.aspx" />
+    <Content Include="Private\MaterialFromInvoice.aspx" />
+    <Content Include="Private\MaterialFromVehicle.aspx" />
+    <Content Include="Private\Notifications.aspx" />
+    <Content Include="Private\ToolboxTalks.aspx" />
+    <Content Include="Private\HealthAndSafety.aspx" />
+    <Content Include="Private\Home.aspx" />
+    <Content Include="Private\JobDetails.aspx" />
+    <Content Include="Private\JobSummary.aspx" />
+    <Content Include="Private\LabourDetails.aspx" />
+    <Content Include="Private\LabourList.aspx" />
+    <Content Include="Private\MaterialCategory.aspx" />
+    <Content Include="Private\MaterialCategoryDetails.aspx" />
+    <Content Include="Private\MaterialDetails.aspx" />
+    <Content Include="Private\MaterialList.aspx" />
+    <Content Include="Private\MySites.aspx" />
+    <Content Include="Private\Office.aspx" />
+    <Content Include="Private\PlantRegister.aspx" />
+    <Content Include="Private\PromoteBusiness.aspx" />
+    <Content Include="Private\Settings.aspx" />
+    <Content Include="Private\SiteDetails.aspx" />
+    <Content Include="Private\SiteHome.aspx" />
+    <Content Include="Private\SiteVisibility.aspx" />
+    <Content Include="Private\TaskAcknowledgement.aspx" />
+    <Content Include="Private\TaskSummary.aspx" />
+    <Content Include="Private\TaskDetails.aspx" />
+    <Content Include="Private\TaskHistory.aspx" />
+    <Content Include="Private\TimeSheets.aspx" />
+    <Content Include="Private\TimeSheetView.aspx" />
+    <Content Include="Private\VehicleMaterialInput.aspx" />
+    <Content Include="Private\Vehicles.aspx" />
+    <Content Include="RegisterCompany.aspx" />
+    <Content Include="RegisterIndividual.aspx" />
+    <Content Include="RegisterSubscription.aspx" />
+    <Content Include="RegistrationComplete.aspx" />
+    <Content Include="Scripts\foundation.min.js" />
+    <Content Include="Scripts\foundation\font\foundation-icons.css" />
+    <Content Include="Scripts\foundation\font\foundation-icons.svg" />
+    <Content Include="Scripts\foundation\font\preview.html" />
+    <Content Include="Scripts\foundation\font\svgs\fi-address-book.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-alert.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-align-center.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-align-justify.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-align-left.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-align-right.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-anchor.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-annotate.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-archive.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-arrow-down.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-arrow-left.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-arrow-right.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-arrow-up.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-arrows-compress.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-arrows-expand.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-arrows-in.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-arrows-out.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-asl.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-asterisk.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-at-sign.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-background-color.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-battery-empty.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-battery-full.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-battery-half.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-bitcoin-circle.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-bitcoin.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-blind.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-bluetooth.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-bold.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-book-bookmark.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-book.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-bookmark.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-braille.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-burst-new.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-burst-sale.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-burst.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-calendar.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-camera.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-check.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-checkbox.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-clipboard-notes.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-clipboard-pencil.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-clipboard.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-clock.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-closed-caption.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-cloud.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-comment-minus.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-comment-quotes.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-comment-video.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-comment.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-comments.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-compass.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-contrast.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-credit-card.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-crop.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-crown.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-css3.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-database.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-die-five.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-die-four.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-die-one.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-die-six.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-die-three.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-die-two.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-dislike.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-dollar-bill.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-dollar.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-download.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-eject.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-elevator.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-euro.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-eye.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-fast-forward.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-female-symbol.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-female.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-filter.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-first-aid.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-folder-add.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-folder-lock.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-folder.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-foot.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-foundation.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-graph-bar.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-graph-horizontal.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-graph-pie.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-graph-trend.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-guide-dog.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-hearing-aid.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-heart.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-home.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-html5.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-indent-less.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-indent-more.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-info.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-italic.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-key.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-laptop.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-layout.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-lightbulb.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-like.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-link.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-list-bullet.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-list-number.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-list-thumbnails.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-list.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-lock.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-loop.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-magnifying-glass.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-mail.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-male-female.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-male-symbol.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-male.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-map.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-marker.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-megaphone.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-microphone.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-minus-circle.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-minus.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-mobile-signal.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-mobile.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-monitor.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-mountains.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-music.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-next.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-no-dogs.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-no-smoking.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-add.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-copy.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-csv.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-delete.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-doc.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-edit.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-export-csv.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-export-doc.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-export-pdf.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-export.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-filled.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-multiple.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-pdf.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-remove.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page-search.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-page.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-paint-bucket.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-paperclip.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-pause.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-paw.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-paypal.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-pencil.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-photo.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-play-circle.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-play-video.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-play.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-plus.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-pound.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-power.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-previous.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-price-tag.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-pricetag-multiple.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-print.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-prohibited.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-projection-screen.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-puzzle.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-quote.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-record.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-refresh.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-results-demographics.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-results.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-rewind-ten.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-rewind.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-rss.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-safety-cone.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-save.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-share.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-sheriff-badge.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-shield.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-shopping-bag.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-shopping-cart.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-shuffle.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-skull.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-500px.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-adobe.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-amazon.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-android.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-apple.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-behance.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-bing.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-blogger.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-delicious.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-designer-news.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-deviant-art.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-digg.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-dribbble.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-drive.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-dropbox.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-evernote.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-facebook.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-flickr.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-forrst.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-foursquare.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-game-center.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-github.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-google-plus.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-hacker-news.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-hi5.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-instagram.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-joomla.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-lastfm.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-linkedin.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-medium.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-myspace.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-orkut.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-path.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-picasa.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-pinterest.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-rdio.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-reddit.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-skillshare.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-skype.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-smashing-mag.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-snapchat.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-spotify.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-squidoo.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-stack-overflow.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-steam.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-stumbleupon.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-treehouse.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-tumblr.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-twitter.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-vimeo.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-windows.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-xbox.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-yahoo.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-yelp.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-youtube.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-zerply.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-social-zurb.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-sound.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-star.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-stop.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-strikethrough.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-subscript.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-superscript.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-tablet-landscape.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-tablet-portrait.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-target-two.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-target.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-telephone-accessible.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-telephone.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-text-color.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-thumbnails.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-ticket.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-torso-business.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-torso-female.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-torso.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-torsos-all-female.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-torsos-all.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-torsos-female-male.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-torsos-male-female.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-torsos.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-trash.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-trees.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-trophy.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-underline.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-universal-access.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-unlink.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-unlock.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-upload-cloud.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-upload.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-usb.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-video.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-volume-none.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-volume-strike.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-volume.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-web.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-wheelchair.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-widget.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-wrench.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-x-circle.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-x.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-yen.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-zoom-in.svg" />
+    <Content Include="Scripts\foundation\font\svgs\fi-zoom-out.svg" />
+    <Content Include="Scripts\foundation\font\svgs\ontrack logo.svg" />
+    <Content Include="Scripts\foundation\foundation.abide.js" />
+    <Content Include="Scripts\foundation\foundation.accordion.js" />
+    <Content Include="Scripts\foundation\foundation.alert.js" />
+    <Content Include="Scripts\foundation\foundation.clearing.js" />
+    <Content Include="Scripts\foundation\foundation.dropdown.js" />
+    <Content Include="Scripts\foundation\foundation.equalizer.js" />
+    <Content Include="Scripts\foundation\foundation.interchange.js" />
+    <Content Include="Scripts\foundation\foundation.joyride.js" />
+    <Content Include="Scripts\foundation\foundation.js" />
+    <Content Include="Scripts\foundation\foundation.magellan.js" />
+    <Content Include="Scripts\foundation\foundation.offcanvas.js" />
+    <Content Include="Scripts\foundation\foundation.orbit.js" />
+    <Content Include="Scripts\foundation\foundation.reveal.js" />
+    <Content Include="Scripts\foundation\foundation.slider.js" />
+    <Content Include="Scripts\foundation\foundation.tab.js" />
+    <Content Include="Scripts\foundation\foundation.tooltip.js" />
+    <Content Include="Scripts\foundation\foundation.topbar.js" />
+    <Content Include="Scripts\jquery-1.7.min.js" />
+    <Content Include="Scripts\vendor\dhtmlxgantt.js" />
+    <Content Include="Scripts\vendor\fastclick.js" />
+    <Content Include="Scripts\vendor\gantt.js" />
+    <Content Include="Scripts\vendor\jquery.cookie.js" />
+    <Content Include="Scripts\vendor\jquery.js" />
+    <Content Include="Scripts\vendor\modernizr.js" />
+    <Content Include="Scripts\vendor\placeholder.js" />
+    <Content Include="Styles\app.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Styles\dhtmlxgantt.css" />
+    <Content Include="Styles\foundation.css" />
+    <Content Include="Styles\foundation.min.css" />
+    <Content Include="Styles\gantt.css" />
+    <Content Include="Styles\normalize.css" />
+    <Content Include="UserControls\ContactCompanies.ascx" />
+    <Content Include="UserControls\ContactPanelHome.ascx" />
+    <Content Include="UserControls\DateControl.ascx" />
+    <Content Include="UserControls\FileDisplayerToolBoxFiles.ascx" />
+    <Content Include="UserControls\FileDisplayer.ascx" />
+    <Content Include="UserControls\JobQuoteStatus.ascx" />
+    <Content Include="UserControls\JobTasks.ascx" />
+    <Content Include="UserControls\JobTasksHistory.ascx" />
+    <Content Include="UserControls\MaterialForm.ascx" />
+    <Content Include="UserControls\PrivateContactMenu.ascx" />
+    <Content Include="UserControls\PrivateMenu.ascx" />
+    <Content Include="UserControls\RegisterCompany.ascx" />
+    <Content Include="UserControls\RegisterIndividual.ascx" />
+    <Content Include="UserControls\UserDetails.ascx" />
+    <Content Include="Private\VehicleInput.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Clickback.aspx.cs">
+      <DependentUpon>Clickback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clickback.aspx.designer.cs">
+      <DependentUpon>Clickback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controller Utility\SessionControllerHandler.cs" />
+    <Compile Include="Controller Utility\MyHttpControllerRouteHandler.cs" />
+    <Compile Include="Controller Utility\SessionStateRouteHandler.cs" />
+    <Compile Include="Controllers\HomeScreenController.cs" />
+    <Compile Include="Controllers\TasksController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default2.Master.cs">
+      <DependentUpon>Default2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default2.Master.designer.cs">
+      <DependentUpon>Default2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialInput.aspx.cs">
+      <DependentUpon>MaterialInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialInput.aspx.designer.cs">
+      <DependentUpon>MaterialInput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Private\AddOns.aspx.cs">
+      <DependentUpon>AddOns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\AddOns.aspx.designer.cs">
+      <DependentUpon>AddOns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\AddMaterialToVehicle.aspx.cs">
+      <DependentUpon>AddMaterialToVehicle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\AddMaterialToVehicle.aspx.designer.cs">
+      <DependentUpon>AddMaterialToVehicle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Connections.aspx.cs">
+      <DependentUpon>Connections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\Connections.aspx.designer.cs">
+      <DependentUpon>Connections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\ImportSupplierInvoices.aspx.cs">
+      <DependentUpon>ImportSupplierInvoices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\ImportSupplierInvoices.aspx.designer.cs">
+      <DependentUpon>ImportSupplierInvoices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Accounts.aspx.cs">
+      <DependentUpon>Accounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\Accounts.aspx.designer.cs">
+      <DependentUpon>Accounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Admin\CompanyDetails.aspx.cs">
+      <DependentUpon>CompanyDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\CompanyDetails.aspx.designer.cs">
+      <DependentUpon>CompanyDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Admin\IndividualDetails.aspx.cs">
+      <DependentUpon>IndividualDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\IndividualDetails.aspx.designer.cs">
+      <DependentUpon>IndividualDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Admin\ManageUsers.aspx.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\ManageUsers.aspx.designer.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Admin\Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\CompanyClose.aspx.cs">
+      <DependentUpon>CompanyClose.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\CompanyClose.aspx.designer.cs">
+      <DependentUpon>CompanyClose.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\CompanyDetails.aspx.cs">
+      <DependentUpon>CompanyDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\CompanyDetails.aspx.designer.cs">
+      <DependentUpon>CompanyDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\ContactHome.aspx.cs">
+      <DependentUpon>ContactHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\ContactHome.aspx.designer.cs">
+      <DependentUpon>ContactHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\CustomerDetails.aspx.cs">
+      <DependentUpon>CustomerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\CustomerDetails.aspx.designer.cs">
+      <DependentUpon>CustomerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\CustomerHome.aspx.cs">
+      <DependentUpon>CustomerHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\CustomerHome.aspx.designer.cs">
+      <DependentUpon>CustomerHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\EmployeeDetails.aspx.cs">
+      <DependentUpon>EmployeeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\EmployeeDetails.aspx.designer.cs">
+      <DependentUpon>EmployeeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\EmployeeInfo.aspx.cs">
+      <DependentUpon>EmployeeInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\EmployeeInfo.aspx.designer.cs">
+      <DependentUpon>EmployeeInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\JobsToInvoice.aspx.cs">
+      <DependentUpon>JobsToInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\JobsToInvoice.aspx.designer.cs">
+      <DependentUpon>JobsToInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\JobTemplateInput.aspx.cs">
+      <DependentUpon>JobTemplateInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\JobTemplateInput.aspx.designer.cs">
+      <DependentUpon>JobTemplateInput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\MaterialFromInvoice.aspx.cs">
+      <DependentUpon>MaterialFromInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\MaterialFromInvoice.aspx.designer.cs">
+      <DependentUpon>MaterialFromInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\MaterialFromVehicle.aspx.cs">
+      <DependentUpon>MaterialFromVehicle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\MaterialFromVehicle.aspx.designer.cs">
+      <DependentUpon>MaterialFromVehicle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Notifications.aspx.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\Notifications.aspx.designer.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\ToolboxTalks.aspx.cs">
+      <DependentUpon>ToolboxTalks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\ToolboxTalks.aspx.designer.cs">
+      <DependentUpon>ToolboxTalks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\HealthAndSafety.aspx.cs">
+      <DependentUpon>HealthAndSafety.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\HealthAndSafety.aspx.designer.cs">
+      <DependentUpon>HealthAndSafety.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\JobDetails.aspx.cs">
+      <DependentUpon>JobDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\JobDetails.aspx.designer.cs">
+      <DependentUpon>JobDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\JobSummary.aspx.cs">
+      <DependentUpon>JobSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\JobSummary.aspx.designer.cs">
+      <DependentUpon>JobSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\LabourDetails.aspx.cs">
+      <DependentUpon>LabourDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\LabourDetails.aspx.designer.cs">
+      <DependentUpon>LabourDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\LabourList.aspx.cs">
+      <DependentUpon>LabourList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\LabourList.aspx.designer.cs">
+      <DependentUpon>LabourList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\MaterialCategory.aspx.cs">
+      <DependentUpon>MaterialCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\MaterialCategory.aspx.designer.cs">
+      <DependentUpon>MaterialCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\MaterialCategoryDetails.aspx.cs">
+      <DependentUpon>MaterialCategoryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\MaterialCategoryDetails.aspx.designer.cs">
+      <DependentUpon>MaterialCategoryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\MaterialDetails.aspx.cs">
+      <DependentUpon>MaterialDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\MaterialDetails.aspx.designer.cs">
+      <DependentUpon>MaterialDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\MaterialList.aspx.cs">
+      <DependentUpon>MaterialList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\MaterialList.aspx.designer.cs">
+      <DependentUpon>MaterialList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\MySites.aspx.cs">
+      <DependentUpon>MySites.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\MySites.aspx.designer.cs">
+      <DependentUpon>MySites.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Office.aspx.cs">
+      <DependentUpon>Office.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\Office.aspx.designer.cs">
+      <DependentUpon>Office.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\PlantRegister.aspx.cs">
+      <DependentUpon>PlantRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\PlantRegister.aspx.designer.cs">
+      <DependentUpon>PlantRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\PrivatePage.Master.cs">
+      <DependentUpon>PrivatePage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\PrivatePage.Master.designer.cs">
+      <DependentUpon>PrivatePage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Private\PromoteBusiness.aspx.cs">
+      <DependentUpon>PromoteBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\PromoteBusiness.aspx.designer.cs">
+      <DependentUpon>PromoteBusiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\SiteDetails.aspx.cs">
+      <DependentUpon>SiteDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\SiteDetails.aspx.designer.cs">
+      <DependentUpon>SiteDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\SiteHome.aspx.cs">
+      <DependentUpon>SiteHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\SiteHome.aspx.designer.cs">
+      <DependentUpon>SiteHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\SiteVisibility.aspx.cs">
+      <DependentUpon>SiteVisibility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\SiteVisibility.aspx.designer.cs">
+      <DependentUpon>SiteVisibility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\TaskAcknowledgement.aspx.cs">
+      <DependentUpon>TaskAcknowledgement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\TaskAcknowledgement.aspx.designer.cs">
+      <DependentUpon>TaskAcknowledgement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\TaskSummary.aspx.cs">
+      <DependentUpon>TaskSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\TaskSummary.aspx.designer.cs">
+      <DependentUpon>TaskSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\TaskDetails.aspx.cs">
+      <DependentUpon>TaskDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\TaskDetails.aspx.designer.cs">
+      <DependentUpon>TaskDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\TaskHistory.aspx.cs">
+      <DependentUpon>TaskHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\TaskHistory.aspx.designer.cs">
+      <DependentUpon>TaskHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\TimeSheets.aspx.cs">
+      <DependentUpon>TimeSheets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\TimeSheets.aspx.designer.cs">
+      <DependentUpon>TimeSheets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\TimeSheetView.aspx.cs">
+      <DependentUpon>TimeSheetView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\TimeSheetView.aspx.designer.cs">
+      <DependentUpon>TimeSheetView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\VehicleMaterialInput.aspx.cs">
+      <DependentUpon>VehicleMaterialInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\VehicleMaterialInput.aspx.designer.cs">
+      <DependentUpon>VehicleMaterialInput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Vehicles.aspx.cs">
+      <DependentUpon>Vehicles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\Vehicles.aspx.designer.cs">
+      <DependentUpon>Vehicles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterCompany.aspx.cs">
+      <DependentUpon>RegisterCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterCompany.aspx.designer.cs">
+      <DependentUpon>RegisterCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterIndividual.aspx.cs">
+      <DependentUpon>RegisterIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterIndividual.aspx.designer.cs">
+      <DependentUpon>RegisterIndividual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterSubscription.aspx.cs">
+      <DependentUpon>RegisterSubscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterSubscription.aspx.designer.cs">
+      <DependentUpon>RegisterSubscription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationComplete.aspx.cs">
+      <DependentUpon>RegistrationComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrationComplete.aspx.designer.cs">
+      <DependentUpon>RegistrationComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ContactCompanies.ascx.cs">
+      <DependentUpon>ContactCompanies.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ContactCompanies.ascx.designer.cs">
+      <DependentUpon>ContactCompanies.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ContactPanelHome.ascx.cs">
+      <DependentUpon>ContactPanelHome.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ContactPanelHome.ascx.designer.cs">
+      <DependentUpon>ContactPanelHome.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DateControl.ascx.cs">
+      <DependentUpon>DateControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DateControl.ascx.designer.cs">
+      <DependentUpon>DateControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FileDisplayerToolBoxFiles.ascx.cs">
+      <DependentUpon>FileDisplayerToolBoxFiles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\FileDisplayerToolBoxFiles.ascx.designer.cs">
+      <DependentUpon>FileDisplayerToolBoxFiles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FileDisplayer.ascx.cs">
+      <DependentUpon>FileDisplayer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\FileDisplayer.ascx.designer.cs">
+      <DependentUpon>FileDisplayer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JobQuoteStatus.ascx.cs">
+      <DependentUpon>JobQuoteStatus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JobQuoteStatus.ascx.designer.cs">
+      <DependentUpon>JobQuoteStatus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JobTasks.ascx.cs">
+      <DependentUpon>JobTasks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JobTasks.ascx.designer.cs">
+      <DependentUpon>JobTasks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JobTasksHistory.ascx.cs">
+      <DependentUpon>JobTasksHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JobTasksHistory.ascx.designer.cs">
+      <DependentUpon>JobTasksHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaterialForm.ascx.cs">
+      <DependentUpon>MaterialForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaterialForm.ascx.designer.cs">
+      <DependentUpon>MaterialForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RegisterBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserDetails.ascx.cs">
+      <DependentUpon>UserDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserDetails.ascx.designer.cs">
+      <DependentUpon>UserDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Private\VehicleInput.aspx.cs">
+      <DependentUpon>VehicleInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\VehicleInput.aspx.designer.cs">
+      <DependentUpon>VehicleInput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Validations\Validations.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="API\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\ar\" />
+    <Folder Include="bin\cs\" />
+    <Folder Include="bin\de\" />
+    <Folder Include="bin\es\" />
+    <Folder Include="bin\fr\" />
+    <Folder Include="bin\he\" />
+    <Folder Include="bin\hi\" />
+    <Folder Include="bin\it\" />
+    <Folder Include="bin\ja\" />
+    <Folder Include="bin\ko\" />
+    <Folder Include="bin\nl\" />
+    <Folder Include="bin\pl\" />
+    <Folder Include="bin\pt\" />
+    <Folder Include="bin\ru\" />
+    <Folder Include="bin\tr-TR\" />
+    <Folder Include="bin\zh-CHS\" />
+    <Folder Include="bin\zh-CHT\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\BusinessRules\BusinessRules.csproj">
+      <Project>{A5FA6C2C-310C-424A-8D52-C91A600986F1}</Project>
+      <Name>BusinessRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\DataAccess\DataAccess.csproj">
+      <Project>{B4732363-BB07-4527-96D4-DB6E2120BC0A}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\DataObjects\DataObjects.csproj">
+      <Project>{57C3490D-F0EA-42ED-A6E8-1F1ADD358D41}</Project>
+      <Name>DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Utility\Utility.csproj">
+      <Project>{43430E32-32AD-4B28-AF19-DC73B941CBDC}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Web\Web.csproj">
+      <Project>{AD155DAB-DE59-49EA-B372-324D43EAD3A3}</Project>
+      <Name>Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AjaxControlToolkit.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default2.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Private\PrivatePage.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\foundation\font\.fontcustom-data" />
+    <Content Include="Scripts\foundation\font\foundation-icons.eot" />
+    <Content Include="Scripts\foundation\font\foundation-icons.ttf" />
+    <Content Include="Scripts\foundation\font\foundation-icons.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="FileUpload\Keys\public_privatekey.pfx" />
+    <None Include="Properties\PublishProfiles\OnTrack [LIVE].pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63321</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63323/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:63323/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

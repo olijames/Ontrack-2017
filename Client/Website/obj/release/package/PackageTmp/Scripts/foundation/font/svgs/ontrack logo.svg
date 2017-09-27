@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="200" width="250">
+
+<ellipse cx="70" cy="70" rx="33" ry="41" style="stroke:rgb(171, 211, 2)" stroke-width="10" fill="none"/>
+<polygon points="50,45 70,90 105,15 69,70" style="fill:rgb(0, 34, 100);stroke:rgb(41, 130, 190);stroke-width:2" />
+
+
+     <!--<line x1="30" y1="30" x2="200" y2="200" style="stroke:rgb(000,125,005);stroke-width:20"/></line>
+    <line x1="30" y1="30" x2="200" y2="200" style="stroke:rgb(0,155,5);stroke-width:20"/></line>-->
+
+    <text x="110" y="80" style="font-family: Helvetica,Arial,sans-serif;font-weight:bold;font-size:39; fill :rgb(171, 211, 2); ">n</text>
+<text x="132" y="90" style="font-family: Helvetica,Arial,sans-serif;font-weight:bold;font-size:45; fill :rgb(0, 34, 100); ">T</text>
+<text x="155" y="90" style="font-family: Helvetica,Arial,sans-serif;font-weight:bold;font-size:39; fill :rgb(0, 34, 100); ">rack</text>
+<!--<line x1="125" y1="85" x2="240" y2="85" style="stroke:rgb(45,45,45);stroke-width:3"/></line>-->
+<text x="105" y="105" style="font-family: Helvetica,Arial,sans-serif;font-style:italic;font-size:16; fill :rgb(171, 211, 2); ">Connecting </text>
+<text x="193" y="105" style="font-family: Helvetica,Arial,sans-serif;font-style:italic;font-size:16; fill :rgb(171, 211, 2); "> works</text>
+
+</svg>

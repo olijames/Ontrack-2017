@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PrivatePage.Master.cs" Inherits="Electracraft.Client.Website.Private.PrivatePage" %>
+<%@ Register Src="~/UserControls/PrivateMenu.ascx" TagName="PrivateMenu" TagPrefix="controls" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="no-js" lang="en">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="ContentHead" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no,minimal-ui" />
+    <title><asp:ContentPlaceHolder ID="ContentTitle" runat="server"></asp:ContentPlaceHolder>- On Track</title>
+    <link rel="stylesheet" href="../styles/foundation.css" />
+    <link rel="stylesheet" href="../styles/app.css" />
+    <link rel="stylesheet" href="../scripts/foundation/font/foundation-icons.css" />
+    <script type="text/javascript" src='../scripts/vendor/jquery.js'></script>
+</head>
+
+<body style="background: #fff;">
+    <form id="frmDefault" runat="server">
+        <ajaxToolkit:ToolkitScriptManager ID="atkScriptManager" runat="server" EnablePartialRendering="true" EnablePageMethods="true" />
+        <div class="off-canvas-wrap" aria-hidden="true" data-offcanvas style="min-height: 100%;">
+            <div class="inner-wrap" style="min-height: 100%;">
+                <!-- Off Canvas Menu -->
+                <aside class="left-off-canvas-menu" style="min-height: 100%;">
+                    <!-- whatever you want goes here -->
+                    <controls:PrivateMenu ID="PrivateMenu1" runat="server"></controls:PrivateMenu>
+                    <asp:ContentPlaceHolder ID="ContentMenu" runat="server">
+                    </asp:ContentPlaceHolder>
+                </aside>
+
+                <!-- main content goes here -->
+                <div class="container">
+                    <!-- Medium Up Header -->
+                    <div class="hide-for-small-only">
+                        <div class="medium-header light-black">
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <span style="display: inline-block; padding-top: 0.66667rem; padding-right: 1.4rem; float: left; margin-top: 1px;">OnTrack</span>
+                                    <controls:PrivateMenu ID="PrivateMenu2" runat="server"></controls:PrivateMenu>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Small Header -->
+                    <div class="row show-for-small-only" style="background: #000; color: #fff;">
+                        <div class="small-1 columns"><a role="button" class="left-off-canvas-toggle" href="#" style="color: #fff; font-size: 2em; display: block; padding: 0.2em 0;"><i class="fi-list"></i></a></div>
+                        <div class="small-11 columns">
+                            <p style="padding-top: 0.6em; padding-bottom: 0; margin: 0;">
+                                <asp:HyperLink runat="server" NavigateUrl="~/Private/Home.aspx" Text="OnTrack" ForeColor="#ffffff"></asp:HyperLink></p>
+
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="main-content" style="margin: 0.5em 0.3em; min-height: 1000px; height: 100%;">
+                        <asp:Panel ID="pnlMessage" runat="server" EnableViewState="false" Visible="false" CssClass="row">
+                            <div class="small-12 columns message" style="margin: 0.875em;">
+                                <asp:Panel ID="pnlMessageClass" runat="server">
+                                    <span class="fi-alert" style="color: #d7d862; font-size: 1.2em; margin-right: 0.5em;"></span>
+                                    <asp:Literal ID="litMessage" runat="server"></asp:Literal>
+                                </asp:Panel>
+                            </div>
+                        </asp:Panel>
+                        <asp:ContentPlaceHolder ID="ContentBody" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <!-- close the off-canvas menu -->
+                <a class="exit-off-canvas"></a>
+            </div>
+        </div>
+        <script type="text/javascript" src="../scripts/vendor/modernizr.js"></script>
+        <script type="text/javascript" src='<%= ResolveClientUrl("~/scripts/foundation.min.js") %>'></script>
+        <script src='<%= ResolveClientUrl("~/scripts/foundation/foundation.offcanvas.js") %>'></script>
+        <script src='<%= ResolveClientUrl("~/scripts/foundation/foundation.equalizer.js") %>'></script>
+        <script type="text/javascript">
+            $(document).foundation();
+        </script>
+
+    </form>
+
+</body>
+</html>

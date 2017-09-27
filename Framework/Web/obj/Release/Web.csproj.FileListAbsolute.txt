@@ -1,0 +1,45 @@
+D:\Projects\Electracraft App\trunk\Framework\Web\bin\Release\Electracraft.Framework.Web.dll
+D:\Projects\Electracraft App\trunk\Framework\Web\bin\Release\Electracraft.Framework.Web.pdb
+D:\Projects\Electracraft App\trunk\Framework\Web\bin\Release\Electracraft.Framework.BusinessRules.dll
+D:\Projects\Electracraft App\trunk\Framework\Web\bin\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\Electracraft App\trunk\Framework\Web\bin\Release\Electracraft.Framework.Utility.dll
+D:\Projects\Electracraft App\trunk\Framework\Web\bin\Release\Electracraft.Framework.DataAccess.dll
+D:\Projects\Electracraft App\trunk\Framework\Web\bin\Release\EntityFramework.dll
+D:\Projects\Electracraft App\trunk\Framework\Web\bin\Release\Electracraft.Framework.BusinessRules.pdb
+D:\Projects\Electracraft App\trunk\Framework\Web\bin\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Electracraft App\trunk\Framework\Web\bin\Release\Electracraft.Framework.Utility.pdb
+D:\Projects\Electracraft App\trunk\Framework\Web\bin\Release\Electracraft.Framework.DataAccess.pdb
+D:\Projects\Electracraft App\trunk\Framework\Web\bin\Release\EntityFramework.xml
+D:\Projects\Electracraft App\trunk\Framework\Web\obj\Release\Web.csprojResolveAssemblyReference.cache
+D:\Projects\Electracraft App\trunk\Framework\Web\obj\Release\Electracraft.Framework.Web.dll
+D:\Projects\Electracraft App\trunk\Framework\Web\obj\Release\Electracraft.Framework.Web.pdb
+D:\Projects\OnTrack-Git\Framework\Web\bin\Release\Electracraft.Framework.Web.dll
+D:\Projects\OnTrack-Git\Framework\Web\bin\Release\Electracraft.Framework.Web.pdb
+D:\Projects\OnTrack-Git\Framework\Web\bin\Release\Electracraft.Framework.BusinessRules.dll
+D:\Projects\OnTrack-Git\Framework\Web\bin\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\OnTrack-Git\Framework\Web\bin\Release\Electracraft.Framework.Utility.dll
+D:\Projects\OnTrack-Git\Framework\Web\bin\Release\Electracraft.Framework.DataAccess.dll
+D:\Projects\OnTrack-Git\Framework\Web\bin\Release\EntityFramework.dll
+D:\Projects\OnTrack-Git\Framework\Web\bin\Release\Electracraft.Framework.BusinessRules.pdb
+D:\Projects\OnTrack-Git\Framework\Web\bin\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\OnTrack-Git\Framework\Web\bin\Release\Electracraft.Framework.Utility.pdb
+D:\Projects\OnTrack-Git\Framework\Web\bin\Release\Electracraft.Framework.DataAccess.pdb
+D:\Projects\OnTrack-Git\Framework\Web\bin\Release\EntityFramework.xml
+D:\Projects\OnTrack-Git\Framework\Web\obj\Release\Web.csprojResolveAssemblyReference.cache
+D:\Projects\OnTrack-Git\Framework\Web\obj\Release\Electracraft.Framework.Web.dll
+D:\Projects\OnTrack-Git\Framework\Web\obj\Release\Electracraft.Framework.Web.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\bin\Release\Electracraft.Framework.Web.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\bin\Release\Electracraft.Framework.Web.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\bin\Release\Electracraft.Framework.BusinessRules.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\bin\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\bin\Release\Electracraft.Framework.Utility.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\bin\Release\Electracraft.Framework.DataAccess.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\bin\Release\EntityFramework.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\bin\Release\Electracraft.Framework.BusinessRules.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\bin\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\bin\Release\Electracraft.Framework.Utility.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\bin\Release\Electracraft.Framework.DataAccess.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\bin\Release\EntityFramework.xml
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\obj\Release\Web.csprojResolveAssemblyReference.cache
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\obj\Release\Electracraft.Framework.Web.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\Web\obj\Release\Electracraft.Framework.Web.pdb

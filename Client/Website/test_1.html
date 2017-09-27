@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script> var pagestart = new Date().getTime(); </script>
+    <title>Task Finder</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css" />
+    <style>
+        .mark {
+            background-color: grey!important;
+        }
+
+        .changeing {
+            background-color: orange!important;
+        }
+
+        .success {
+            background-color: green!important;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h1>Get Times</h1>
+    <div id="times"></div>
+    <h1>Set Times</h1>
+    <div id="settimes"></div>
+</div>
+
+
+
+            <table id="tasks" class="ui compact celled definition unstackable table">
+              
+            </table>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script>
+    var uri = 'http://localhost:63323/api/tasks/TaskByJobID/c07f4152-9b1d-4b15-b4d5-110f92a33924';
+    var taskList = "";
+    $(document)
+        .ready(function() {
+            var taskstart = new Date().getTime();
+            //Send an AJAX request
+            $.getJSON(uri)
+                .done(function(data) {
+                    taskList = data;
+                    //On success, 'data' contains a list of products.
+                    $.each(data,
+                        function(key, item) {
+                            var id = "\"" + key + "\""
+                            var tableRow = "<tr id='" + key + "'><td><button onclick='edit(" + id + ")'> edit</button></td><td>" + item.TaskName + "</td><td>" + item.StartDate + "</td><td>" + item.EndDate + "</td><td>" + item.Description + "</td></tr>";
+                            $( "#tasks" ).append( tableRow );
+                            
+                        });
+
+                });
+             var end = new Date().getTime();
+            $( "#times" ).append('Time to get task list:', end - taskstart);
+            $( "#times" ).append('\n Time to load page:', end - pagestart);
+        });
+    function formatItem(item) {
+        return item.name + ':$' + item.Price;
+    }
+    function find() {
+        var id = $('#prodId').val();
+        $.getJSON(uri + '/' + id)
+            .done(function(data) {
+                $('#products').text(formatItem(data));
+
+            })
+            .fail(function(jqXHR, textStatus, err) {
+                $('#products').text('Error: ' + err);
+            });
+    }
+    function edit(id) {
+        $( "#"+id ).addClass("edit");
+        var inputName = "<div class='ui input'> <input id='name-"+ id +"' type='text' placeholder='"+ taskList[id].TaskName+"'> </div>";
+        var inputStart = "<div class='ui input'> <input id='start-"+ id +"' type='text' placeholder='"+ taskList[id].StartDate+"'> </div>";
+        var inputEnd = "<div class='ui input'> <input id='end-"+ id +"' type='text' placeholder='"+ taskList[id].EndDate+"'> </div>";
+        var inputDescription = "<div class='ui input'> <input id='desc-"+ id +"' type='text' placeholder='"+ taskList[id].Description+"'> </div>";
+        $( "#"+id ).replaceWith("<tr id='" + id + "'><td><button onclick='save(" +id+ ")'> save</button></td><td>" + inputName + "</td><td>" + inputStart + "</td><td>" + inputEnd + "</td><td>" + inputDescription + "</td></tr>");
+
+        
+        
+    }
+
+    function save(id) {
+
+        var putStart = new Date().getTime();
+
+        var send = [];
+
+        var name = ($('#name-' + id).val());
+        if (typeof name === "undefined" || name === "") { name = ""; } else { name = ("&TaskName=" + name); }
+
+        var start = ($('#start-' + id).val());
+        if (typeof start === "undefined" || start === "") { start = ""; } else { start = ("&StartDate=" + start); }
+
+        var end = ($('#end-' + id).val());
+        if (typeof end === "undefined" || end === "") { end = ""; } else { end = ("&EndDate=" + end); }
+
+        var desc = ($('#desc-' + id).val());
+        if (typeof desc === "undefined" || desc === "") { desc = ""; } else { desc = ("&Description=" + desc); }
+
+
+        $("#" + id).addClass("changeing");
+
+        var root = "http://localhost:63323/api/tasks/update/save?id=" + taskList[id].TaskID + "&TaskName=" + taskList[id].TaskName + "&StartDate=" + taskList[id].StartDate + "&EndDate=" + taskList[id].EndDate + "&Description=" + taskList[id].Description ;
+
+        var path = "http://localhost:63323/api/tasks/update/save?id=" + taskList[id].TaskID + name + start + end + desc ; 
+
+
+
+        var request = $.ajax({
+            url: path,
+            type: 'PUT',
+            contentType: "application/json; charset=UTF-8",
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                console.log(response.TaskName);
+                $("#" + id).html( "<td><button onclick='edit(" + id + ")'> edit</button></td><td>" + response.TaskName + "</td><td>" + response.StartDate + "</td><td>" + response.EndDate + "</td><td>" + response.Description + "</td>" );
+                $("#" + id).removeClass("changeing");
+                $("#" + id).addClass("success");
+
+                var putEnd = new Date().getTime();
+                $("#settimes").append('Time to get task list:', putEnd - putStart);
+            }
+        });
+
+     
+
+    }
+
+
+</script>
+</body>
+</html>

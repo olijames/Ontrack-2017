@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{57C3490D-F0EA-42ED-A6E8-1F1ADD358D41}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Electracraft.Framework.DataObjects</RootNamespace>
+    <AssemblyName>Electracraft.Framework.DataObjects</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseFieldAttribute.cs" />
+    <Compile Include="DatabaseTableAttribute.cs" />
+    <Compile Include="DataObjectSchema.cs" />
+    <Compile Include="DOBase.cs" />
+    <Compile Include="DOMyContractorsTradeCategory.cs" />
+    <Compile Include="DOEmployeeVehicle.cs" />
+    <Compile Include="DOContactWithJobValue.cs" />
+    <Compile Include="DOContact.cs" />
+    <Compile Include="DOContactCustomer.cs" />
+    <Compile Include="DOContactInfo.cs" />
+    <Compile Include="DOContactBase.cs" />
+    <Compile Include="DOContactCompany.cs" />
+    <Compile Include="DOContractorCustomerLinkedInfo.cs" />
+    <Compile Include="DOContractorCustomer.cs" />
+    <Compile Include="DOContactEmployee.cs" />
+    <Compile Include="DOContactSite.cs" />
+    <Compile Include="DOContactTradeCatInfo.cs" />
+    <Compile Include="DOContactTradeCategory.cs" />
+    <Compile Include="DOContactVerification.cs" />
+    <Compile Include="DOCustomer.cs" />
+    <Compile Include="DOCustomerInvitation.cs" />
+    <Compile Include="DODistrict.cs" />
+    <Compile Include="DOEmployeeInfo.cs" />
+    <Compile Include="DOFileUpload.cs" />
+    <Compile Include="DOForVehicleInput.cs" />
+    <Compile Include="DOGeneralSetting.cs" />
+    <Compile Include="DOActiveJobsForContractor.cs" />
+    <Compile Include="DOInvoice.cs" />
+    <Compile Include="DOJobInfo.cs" />
+    <Compile Include="DOJob.cs" />
+    <Compile Include="DOJobChange.cs" />
+    <Compile Include="DOJobContractor.cs" />
+    <Compile Include="DOJobTemplate.cs" />
+    <Compile Include="DOJobTemplateTask.cs" />
+    <Compile Include="DOJobTimeSheet.cs" />
+    <Compile Include="DOMaterialFilePass.cs" />
+    <Compile Include="DOMyJobTemplate.cs" />
+    <Compile Include="DOQuote.cs" />
+    <Compile Include="DOSiteLessInfo.cs" />
+    <Compile Include="DOTaskJob.cs" />
+    <Compile Include="DOTaskFile.cs" />
+    <Compile Include="DOTaskLabourInfo.cs" />
+    <Compile Include="DOTaskMaterialInfo.cs" />
+    <Compile Include="DOToolBoxFile.cs" />
+    <Compile Include="DOJobFile.cs" />
+    <Compile Include="DOJobQuote.cs" />
+    <Compile Include="DOLabour.cs" />
+    <Compile Include="DOLabourCategory.cs" />
+    <Compile Include="DOMaterial.cs" />
+    <Compile Include="DOMaterialCategory.cs" />
+    <Compile Include="DOOperatingSites.cs" />
+    <Compile Include="DORegion.cs" />
+    <Compile Include="DOSiteInfo.cs" />
+    <Compile Include="DOSiteVisibility.cs" />
+    <Compile Include="DOSiteWithContact.cs" />
+    <Compile Include="DOSuburb.cs" />
+    <Compile Include="DOSupplierInvoice.cs" />
+    <Compile Include="DOSupplierInvoiceMaterial.cs" />
+    <Compile Include="DOTask.cs" />
+    <Compile Include="DOTaskAcknowledgement.cs" />
+    <Compile Include="DOTaskCompletion.cs" />
+    <Compile Include="DOTaskLabour.cs" />
+    <Compile Include="DOTaskLabourFull.cs" />
+    <Compile Include="DOTaskMaterial.cs" />
+    <Compile Include="DOTaskPendingContractor.cs" />
+    <Compile Include="DOTaskQuote.cs" />
+    <Compile Include="DOTimeSheetSummary.cs" />
+    <Compile Include="DOTradeCategory.cs" />
+    <Compile Include="DOUnassignedByContactID.cs" />
+    <Compile Include="DOUnassignedByContactIDAndSupplierInvoiceID.cs" />
+    <Compile Include="DOVehicle.cs" />
+    <Compile Include="DOVehicleMaterials.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DOSite.cs" />
+    <Compile Include="DOSubTradeCategory.cs" />
+    <Compile Include="DOSupplier.cs" />
+    <Compile Include="DOVehicleMaterialQty.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

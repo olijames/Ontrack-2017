@@ -1,0 +1,1 @@
+update ContractorCustomer set contractorcustomer.CustomerType=Contact.ContactType from Contact, ContractorCustomer where  Contact.ContactID=ContractorCustomer.CustomerID

@@ -1,0 +1,33 @@
+D:\Projects\Electracraft App\trunk\Framework\DataAccess\bin\Release\Electracraft.Framework.DataAccess.dll
+D:\Projects\Electracraft App\trunk\Framework\DataAccess\bin\Release\Electracraft.Framework.DataAccess.pdb
+D:\Projects\Electracraft App\trunk\Framework\DataAccess\bin\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\Electracraft App\trunk\Framework\DataAccess\bin\Release\Electracraft.Framework.Utility.dll
+D:\Projects\Electracraft App\trunk\Framework\DataAccess\bin\Release\EntityFramework.dll
+D:\Projects\Electracraft App\trunk\Framework\DataAccess\bin\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Electracraft App\trunk\Framework\DataAccess\bin\Release\Electracraft.Framework.Utility.pdb
+D:\Projects\Electracraft App\trunk\Framework\DataAccess\bin\Release\EntityFramework.xml
+D:\Projects\Electracraft App\trunk\Framework\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+D:\Projects\Electracraft App\trunk\Framework\DataAccess\obj\Release\Electracraft.Framework.DataAccess.dll
+D:\Projects\Electracraft App\trunk\Framework\DataAccess\obj\Release\Electracraft.Framework.DataAccess.pdb
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Release\Electracraft.Framework.DataAccess.dll
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Release\Electracraft.Framework.DataAccess.pdb
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Release\Electracraft.Framework.Utility.dll
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Release\EntityFramework.dll
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Release\Electracraft.Framework.Utility.pdb
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Release\EntityFramework.xml
+D:\Projects\OnTrack-Git\Framework\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+D:\Projects\OnTrack-Git\Framework\DataAccess\obj\Release\Electracraft.Framework.DataAccess.dll
+D:\Projects\OnTrack-Git\Framework\DataAccess\obj\Release\Electracraft.Framework.DataAccess.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataAccess\bin\Release\Electracraft.Framework.DataAccess.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataAccess\bin\Release\Electracraft.Framework.DataAccess.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataAccess\bin\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataAccess\bin\Release\Electracraft.Framework.Utility.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataAccess\bin\Release\EntityFramework.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataAccess\bin\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataAccess\bin\Release\Electracraft.Framework.Utility.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataAccess\bin\Release\EntityFramework.xml
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataAccess\obj\Release\Electracraft.Framework.DataAccess.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataAccess\obj\Release\Electracraft.Framework.DataAccess.pdb

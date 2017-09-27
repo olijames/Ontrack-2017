@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Electracraft.Framework.DataObjects
+{
+    [DatabaseTable("Customer")]
+    public class DOCustomer : DOContactBase
+    {
+        [DatabaseField("CustomerID", IsPrimaryKey = true)]
+        public Guid CustomerID { get; set; }
+
+        [DatabaseField("ContactID")]
+        public Guid ContactID { get; set; }
+
+        public override Guid ID
+        {
+            get { return CustomerID; }
+        }
+
+        public override string ContactBaseType
+        {
+            get { return "Customer"; }
+        }
+
+        /// <summary>
+        /// This is the contact ID of the contact that represents the customer, NOT the contact who this is a customer of.
+        /// DOContractorCustomer shows which customers are customers of which contacts.
+        /// </summary>
+        public override string DisplayName
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(CompanyName))
+                {
+                    return FirstName + " " + LastName;
+                }
+                else
+                {
+                    return CompanyName;
+                }
+            }
+        }
+    }
+}

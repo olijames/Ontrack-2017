@@ -1,0 +1,1 @@
+ftp://portal-ecraft-co-nz-sea%255c%2524portal-ecraft-co-nz-sea@waws-prod-ml1-003.ftp.azurewebsites.windows.net/site/wwwroot/FileUpload/Keys/public_privatekey.pfx

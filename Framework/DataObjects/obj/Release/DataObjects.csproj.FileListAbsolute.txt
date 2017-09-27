@@ -1,0 +1,30 @@
+D:\Projects\Electracraft App\trunk\Framework\DataObjects\bin\Release\Electracraft.Framework.DataObjects.dll.config
+D:\Projects\Electracraft App\trunk\Framework\DataObjects\bin\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\Electracraft App\trunk\Framework\DataObjects\bin\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Electracraft App\trunk\Framework\DataObjects\bin\Release\EntityFramework.dll
+D:\Projects\Electracraft App\trunk\Framework\DataObjects\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\Electracraft App\trunk\Framework\DataObjects\bin\Release\EntityFramework.xml
+D:\Projects\Electracraft App\trunk\Framework\DataObjects\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\Electracraft App\trunk\Framework\DataObjects\obj\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\Electracraft App\trunk\Framework\DataObjects\obj\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Electracraft App\trunk\Framework\DataObjects\obj\Release\DataObjects.csprojResolveAssemblyReference.cache
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Release\Electracraft.Framework.DataObjects.dll.config
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Release\EntityFramework.dll
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Release\EntityFramework.xml
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\OnTrack-Git\Framework\DataObjects\obj\Release\DataObjects.csprojResolveAssemblyReference.cache
+D:\Projects\OnTrack-Git\Framework\DataObjects\obj\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\OnTrack-Git\Framework\DataObjects\obj\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataObjects\bin\Release\Electracraft.Framework.DataObjects.dll.config
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataObjects\bin\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataObjects\bin\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataObjects\bin\Release\EntityFramework.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataObjects\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataObjects\bin\Release\EntityFramework.xml
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataObjects\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataObjects\obj\Release\DataObjects.csprojResolveAssemblyReference.cache
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataObjects\obj\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\DataObjects\obj\Release\Electracraft.Framework.DataObjects.pdb

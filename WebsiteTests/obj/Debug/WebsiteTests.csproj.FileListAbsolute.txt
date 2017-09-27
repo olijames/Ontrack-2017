@@ -1,0 +1,56 @@
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\WebsiteTests.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\WebsiteTests.pdb
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Electracraft.Client.Website.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Electracraft.Framework.Web.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Electracraft.Framework.Utility.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\EntityFramework.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\AjaxControlToolkit.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Html5Asp.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Electracraft.Framework.BusinessRules.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\HtmlAgilityPack.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\AjaxMin.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Electracraft.Framework.DataAccess.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Electracraft.Client.Website.pdb
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Electracraft.Framework.Web.pdb
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Electracraft.Framework.Utility.pdb
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\EntityFramework.xml
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Electracraft.Framework.BusinessRules.pdb
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\HtmlAgilityPack.pdb
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\HtmlAgilityPack.xml
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\Electracraft.Framework.DataAccess.pdb
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\ar\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\cs\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\de\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\es\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\fr\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\he\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\hi\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\it\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\ja\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\ko\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\nl\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\pl\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\pt\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\ru\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\tr-TR\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\zh-CHS\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\bin\Debug\zh-CHT\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\obj\Debug\WebsiteTests.csprojResolveAssemblyReference.cache
+D:\Electracraft\trunk\ontrack\WebsiteTests\obj\Debug\WebsiteTests.dll
+D:\Electracraft\trunk\ontrack\WebsiteTests\obj\Debug\WebsiteTests.pdb
+D:\Electracraft\trunk\ontrack - 4.5\WebsiteTests\bin\Debug\WebsiteTests.dll
+D:\Electracraft\trunk\ontrack - 4.5\WebsiteTests\bin\Debug\WebsiteTests.pdb
+D:\Electracraft\trunk\ontrack - 4.5\WebsiteTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Electracraft\trunk\ontrack - 4.5\WebsiteTests\obj\Debug\WebsiteTests.csprojResolveAssemblyReference.cache
+D:\Electracraft\trunk\ontrack - 4.5\WebsiteTests\obj\Debug\WebsiteTests.dll
+D:\Electracraft\trunk\ontrack - 4.5\WebsiteTests\obj\Debug\WebsiteTests.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\WebsiteTests\bin\Debug\WebsiteTests.dll.config
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\WebsiteTests\bin\Debug\WebsiteTests.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\WebsiteTests\bin\Debug\WebsiteTests.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\WebsiteTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\WebsiteTests\obj\Debug\WebsiteTests.csprojResolveAssemblyReference.cache
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\WebsiteTests\obj\Debug\WebsiteTests.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\WebsiteTests\obj\Debug\WebsiteTests.pdb

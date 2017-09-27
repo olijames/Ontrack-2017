@@ -1,0 +1,59 @@
+D:\Electracraft\trunk\ontrack\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.dll.config
+D:\Electracraft\trunk\ontrack\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft\trunk\ontrack\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft\trunk\ontrack\Framework\DataObjects\bin\Debug\EntityFramework.dll
+D:\Electracraft\trunk\ontrack\Framework\DataObjects\bin\Debug\EntityFramework.SqlServer.dll
+D:\Electracraft\trunk\ontrack\Framework\DataObjects\bin\Debug\EntityFramework.xml
+D:\Electracraft\trunk\ontrack\Framework\DataObjects\bin\Debug\EntityFramework.SqlServer.xml
+D:\Electracraft\trunk\ontrack\Framework\DataObjects\obj\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft\trunk\ontrack\Framework\DataObjects\obj\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.dll.config
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataObjects\bin\Debug\EntityFramework.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataObjects\bin\Debug\EntityFramework.SqlServer.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataObjects\bin\Debug\EntityFramework.xml
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataObjects\bin\Debug\EntityFramework.SqlServer.xml
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataObjects\obj\Debug\DataObjects.csprojResolveAssemblyReference.cache
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataObjects\obj\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataObjects\obj\Debug\Electracraft.Framework.DataObjects.pdb
+D:\OnTrack-Git\Framework\DataObjects\obj\Debug\DataObjects.csprojResolveAssemblyReference.cache
+D:\OnTrack-Git\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.dll.config
+D:\OnTrack-Git\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\OnTrack-Git\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\OnTrack-Git\Framework\DataObjects\bin\Debug\EntityFramework.dll
+D:\OnTrack-Git\Framework\DataObjects\bin\Debug\EntityFramework.SqlServer.dll
+D:\OnTrack-Git\Framework\DataObjects\bin\Debug\EntityFramework.xml
+D:\OnTrack-Git\Framework\DataObjects\bin\Debug\EntityFramework.SqlServer.xml
+D:\OnTrack-Git\Framework\DataObjects\obj\Debug\Electracraft.Framework.DataObjects.dll
+D:\OnTrack-Git\Framework\DataObjects\obj\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft App\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.dll.config
+D:\Electracraft App\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft App\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft App\Framework\DataObjects\bin\Debug\EntityFramework.dll
+D:\Electracraft App\Framework\DataObjects\bin\Debug\EntityFramework.SqlServer.dll
+D:\Electracraft App\Framework\DataObjects\bin\Debug\EntityFramework.xml
+D:\Electracraft App\Framework\DataObjects\bin\Debug\EntityFramework.SqlServer.xml
+D:\Electracraft App\Framework\DataObjects\obj\Debug\DataObjects.csprojResolveAssemblyReference.cache
+D:\Electracraft App\Framework\DataObjects\obj\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft App\Framework\DataObjects\obj\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.dll.config
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Debug\EntityFramework.dll
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Debug\EntityFramework.xml
+D:\Projects\OnTrack-Git\Framework\DataObjects\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\OnTrack-Git\Framework\DataObjects\obj\Debug\DataObjects.csprojResolveAssemblyReference.cache
+D:\Projects\OnTrack-Git\Framework\DataObjects\obj\Debug\Electracraft.Framework.DataObjects.dll
+D:\Projects\OnTrack-Git\Framework\DataObjects\obj\Debug\Electracraft.Framework.DataObjects.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.dll.config
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataObjects\bin\Debug\Electracraft.Framework.DataObjects.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataObjects\bin\Debug\EntityFramework.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataObjects\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataObjects\bin\Debug\EntityFramework.xml
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataObjects\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataObjects\obj\Debug\DataObjects.csprojResolveAssemblyReference.cache
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataObjects\obj\Debug\Electracraft.Framework.DataObjects.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataObjects\obj\Debug\Electracraft.Framework.DataObjects.pdb

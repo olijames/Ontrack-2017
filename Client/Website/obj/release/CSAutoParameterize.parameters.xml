@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ConnectionStringDebug-Web.config Connection String" description="ConnectionStringDebug Connection String used in web.config by the application to access the database." defaultValue="Data Source=itl-db-1.database.windows.net;Initial Catalog=itl-portal-ecraft-co-nz-sea;user=itl-portal-ecraft-co-nz@itl-db-1;password=nFc2Latc9m8xQxss;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Projects\\Ontrack\ 2017\ git\ with\ chamila\\Client\\Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ConnectionStringDebug']/@connectionString" />
+  </parameter>
+  <parameter name="connectionstringrelease-Web.config Connection String" description="connectionstringrelease Connection String used in web.config by the application to access the database." defaultValue="data source=itl-db-1.database.windows.net;initial catalog=itl-portal-ecraft-co-nz-sea;user=itl-portal-ecraft-co-nz@itl-db-1;password=nFc2Latc9m8xQxss;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Projects\\Ontrack\ 2017\ git\ with\ chamila\\Client\\Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='connectionstringrelease']/@connectionString" />
+  </parameter>
+  <parameter name="ElectracraftClientWebsiteContext-Web.config Connection String" description="ElectracraftClientWebsiteContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=ElectracraftClientWebsiteContext-20160519153741; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|ElectracraftClientWebsiteContext-20160519153741.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Projects\\Ontrack\ 2017\ git\ with\ chamila\\Client\\Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ElectracraftClientWebsiteContext']/@connectionString" />
+  </parameter>
+</parameters>

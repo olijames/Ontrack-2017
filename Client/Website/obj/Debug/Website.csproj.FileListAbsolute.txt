@@ -1,0 +1,326 @@
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Client.Website.dll.config
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Client.Website.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Client.Website.pdb
+D:\Electracraft\trunk\ontrack\Client\Website\bin\AjaxControlToolkit.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\AjaxMin.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Framework.BusinessRules.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Framework.DataAccess.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Framework.DataObjects.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Framework.Utility.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Framework.Web.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\EntityFramework.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\EntityFramework.SqlServer.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Html5Asp.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\HtmlAgilityPack.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Framework.BusinessRules.pdb
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Framework.DataAccess.pdb
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Framework.Utility.pdb
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Electracraft.Framework.Web.pdb
+D:\Electracraft\trunk\ontrack\Client\Website\bin\EntityFramework.xml
+D:\Electracraft\trunk\ontrack\Client\Website\bin\EntityFramework.SqlServer.xml
+D:\Electracraft\trunk\ontrack\Client\Website\bin\HtmlAgilityPack.pdb
+D:\Electracraft\trunk\ontrack\Client\Website\bin\HtmlAgilityPack.xml
+D:\Electracraft\trunk\ontrack\Client\Website\bin\ar\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\cs\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\de\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\es\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\fr\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\he\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\hi\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\it\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\ja\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\ko\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\nl\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\pl\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\pt\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\ru\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\Electracraft\trunk\ontrack\Client\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+D:\Electracraft\trunk\ontrack\Client\Website\obj\Debug\Electracraft.Client.Website.dll
+D:\Electracraft\trunk\ontrack\Client\Website\obj\Debug\Electracraft.Client.Website.pdb
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Newtonsoft.Json.dll
+D:\Electracraft\trunk\ontrack\Client\Website\bin\Newtonsoft.Json.xml
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Client.Website.dll.config
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Client.Website.dll
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Client.Website.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.BusinessRules.dll
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.DataAccess.dll
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.DataObjects.dll
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.Utility.dll
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.Web.dll
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.BusinessRules.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.DataAccess.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.Utility.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.Web.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\obj\Debug\Electracraft.Client.Website.dll
+D:\Electracraft\trunk\ontrack - 4.5\Client\Website\obj\Debug\Electracraft.Client.Website.pdb
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Client.Website.dll.config
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Client.Website.dll
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Client.Website.pdb
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.BusinessRules.dll
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.DataAccess.dll
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.DataObjects.dll
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.Utility.dll
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.Web.dll
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Xero.Api.dll
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Xero.Api.Example.Applications.dll
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Xero.Api.Example.TokenStores.dll
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\XeroApi.dll
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\XeroApi.Validation.dll
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.BusinessRules.pdb
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.DataAccess.pdb
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.DataObjects.pdb
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.Utility.pdb
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\Electracraft.Framework.Web.pdb
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\XeroApi.pdb
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\bin\XeroApi.Validation.pdb
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\obj\Debug\Electracraft.Client.Website.dll
+C:\Users\User\Desktop\Mandeeps copy\ontrack - 4.5\Client\Website\obj\Debug\Electracraft.Client.Website.pdb
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Client.Website.dll.config
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Client.Website.dll
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Client.Website.pdb
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Framework.BusinessRules.dll
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Framework.DataAccess.dll
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Framework.DataObjects.dll
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Framework.Utility.dll
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Framework.Web.dll
+D:\Projects\Ontrack git\Client\Website\bin\Xero.Api.dll
+D:\Projects\Ontrack git\Client\Website\bin\Xero.Api.Example.Applications.dll
+D:\Projects\Ontrack git\Client\Website\bin\Xero.Api.Example.TokenStores.dll
+D:\Projects\Ontrack git\Client\Website\bin\XeroApi.dll
+D:\Projects\Ontrack git\Client\Website\bin\XeroApi.Validation.dll
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Framework.BusinessRules.pdb
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Framework.DataAccess.pdb
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Framework.Utility.pdb
+D:\Projects\Ontrack git\Client\Website\bin\Electracraft.Framework.Web.pdb
+D:\Projects\Ontrack git\Client\Website\bin\XeroApi.pdb
+D:\Projects\Ontrack git\Client\Website\bin\XeroApi.Validation.pdb
+D:\Projects\Ontrack git\Client\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+D:\Projects\Ontrack git\Client\Website\obj\Debug\Electracraft.Client.Website.dll
+D:\Projects\Ontrack git\Client\Website\obj\Debug\Electracraft.Client.Website.pdb
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Client.Website.dll.config
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Client.Website.dll
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Client.Website.pdb
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Framework.BusinessRules.dll
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Framework.DataAccess.dll
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Framework.DataObjects.dll
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Framework.Utility.dll
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Framework.Web.dll
+D:\Projects\Git copy\Client\Website\bin\Xero.Api.dll
+D:\Projects\Git copy\Client\Website\bin\Xero.Api.Example.Applications.dll
+D:\Projects\Git copy\Client\Website\bin\Xero.Api.Example.TokenStores.dll
+D:\Projects\Git copy\Client\Website\bin\XeroApi.dll
+D:\Projects\Git copy\Client\Website\bin\XeroApi.Validation.dll
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Framework.BusinessRules.pdb
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Framework.DataAccess.pdb
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Framework.Utility.pdb
+D:\Projects\Git copy\Client\Website\bin\Electracraft.Framework.Web.pdb
+D:\Projects\Git copy\Client\Website\bin\XeroApi.pdb
+D:\Projects\Git copy\Client\Website\bin\XeroApi.Validation.pdb
+D:\Projects\Git copy\Client\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+D:\Projects\Git copy\Client\Website\obj\Debug\Electracraft.Client.Website.dll
+D:\Projects\Git copy\Client\Website\obj\Debug\Electracraft.Client.Website.pdb
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Client.Website.dll.config
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Client.Website.dll
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Client.Website.pdb
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Framework.BusinessRules.dll
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Framework.DataAccess.dll
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Framework.DataObjects.dll
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Framework.Utility.dll
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Framework.Web.dll
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Xero.Api.dll
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Xero.Api.Example.Applications.dll
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Xero.Api.Example.TokenStores.dll
+D:\Projects\before deleting from sourcetree\Client\Website\bin\XeroApi.dll
+D:\Projects\before deleting from sourcetree\Client\Website\bin\XeroApi.Validation.dll
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Framework.BusinessRules.pdb
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Framework.DataAccess.pdb
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Framework.DataObjects.pdb
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Framework.Utility.pdb
+D:\Projects\before deleting from sourcetree\Client\Website\bin\Electracraft.Framework.Web.pdb
+D:\Projects\before deleting from sourcetree\Client\Website\bin\XeroApi.pdb
+D:\Projects\before deleting from sourcetree\Client\Website\bin\XeroApi.Validation.pdb
+D:\Projects\before deleting from sourcetree\Client\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+D:\Projects\before deleting from sourcetree\Client\Website\obj\Debug\Electracraft.Client.Website.dll
+D:\Projects\before deleting from sourcetree\Client\Website\obj\Debug\Electracraft.Client.Website.pdb
+D:\OnTrack-Git\Client\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Client.Website.dll.config
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Client.Website.dll
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Client.Website.pdb
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Framework.BusinessRules.dll
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Framework.DataAccess.dll
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Framework.DataObjects.dll
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Framework.Utility.dll
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Framework.Web.dll
+D:\OnTrack-Git\Client\Website\bin\Xero.Api.dll
+D:\OnTrack-Git\Client\Website\bin\XeroApi.dll
+D:\OnTrack-Git\Client\Website\bin\XeroApi.Validation.dll
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Framework.BusinessRules.pdb
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Framework.DataAccess.pdb
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Framework.DataObjects.pdb
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Framework.Utility.pdb
+D:\OnTrack-Git\Client\Website\bin\Electracraft.Framework.Web.pdb
+D:\OnTrack-Git\Client\Website\bin\XeroApi.pdb
+D:\OnTrack-Git\Client\Website\bin\XeroApi.Validation.pdb
+D:\OnTrack-Git\Client\Website\obj\Debug\Electracraft.Client.Website.dll
+D:\OnTrack-Git\Client\Website\obj\Debug\Electracraft.Client.Website.pdb
+D:\Electracraft App\Client\Website\bin\Electracraft.Client.Website.dll.config
+D:\Electracraft App\Client\Website\bin\Electracraft.Client.Website.dll
+D:\Electracraft App\Client\Website\bin\Electracraft.Client.Website.pdb
+D:\Electracraft App\Client\Website\bin\Electracraft.Framework.BusinessRules.dll
+D:\Electracraft App\Client\Website\bin\Electracraft.Framework.DataAccess.dll
+D:\Electracraft App\Client\Website\bin\Electracraft.Framework.DataObjects.dll
+D:\Electracraft App\Client\Website\bin\Electracraft.Framework.Utility.dll
+D:\Electracraft App\Client\Website\bin\Electracraft.Framework.Web.dll
+D:\Electracraft App\Client\Website\bin\Xero.Api.dll
+D:\Electracraft App\Client\Website\bin\XeroApi.dll
+D:\Electracraft App\Client\Website\bin\XeroApi.Validation.dll
+D:\Electracraft App\Client\Website\bin\Electracraft.Framework.BusinessRules.pdb
+D:\Electracraft App\Client\Website\bin\Electracraft.Framework.DataAccess.pdb
+D:\Electracraft App\Client\Website\bin\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft App\Client\Website\bin\Electracraft.Framework.Utility.pdb
+D:\Electracraft App\Client\Website\bin\Electracraft.Framework.Web.pdb
+D:\Electracraft App\Client\Website\bin\XeroApi.pdb
+D:\Electracraft App\Client\Website\bin\XeroApi.Validation.pdb
+D:\Electracraft App\Client\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+D:\Electracraft App\Client\Website\obj\Debug\Electracraft.Client.Website.dll
+D:\Electracraft App\Client\Website\obj\Debug\Electracraft.Client.Website.pdb
+D:\OnTrack-Git\Client\Website\bin\System.Data.SQLite.dll
+D:\OnTrack-Git\Client\Website\bin\Microsoft.Practices.EnterpriseLibrary.Validation.dll
+D:\OnTrack-Git\Client\Website\bin\Microsoft.Practices.Unity.dll
+D:\OnTrack-Git\Client\Website\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\OnTrack-Git\Client\Website\bin\Microsoft.Practices.ServiceLocation.dll
+D:\OnTrack-Git\Client\Website\bin\EntityFramework.xml
+D:\OnTrack-Git\Client\Website\bin\EntityFramework.SqlServer.xml
+D:\OnTrack-Git\Client\Website\bin\HtmlAgilityPack.pdb
+D:\OnTrack-Git\Client\Website\bin\HtmlAgilityPack.xml
+D:\OnTrack-Git\Client\Website\bin\Newtonsoft.Json.xml
+D:\OnTrack-Git\Client\Website\bin\System.Net.Http.Formatting.xml
+D:\OnTrack-Git\Client\Website\bin\System.Web.Http.xml
+D:\OnTrack-Git\Client\Website\bin\System.Web.Http.WebHost.xml
+D:\OnTrack-Git\Client\Website\bin\System.Data.SQLite.xml
+D:\OnTrack-Git\Client\Website\bin\ar\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\cs\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\de\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\es\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\fr\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\he\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\hi\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\it\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\ja\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\ko\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\nl\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\pl\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\pt\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\ru\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\OnTrack-Git\Client\Website\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\System.Data.SQLite.dll
+D:\Electracraft App\Client\Website\bin\Microsoft.Practices.EnterpriseLibrary.Validation.dll
+D:\Electracraft App\Client\Website\bin\Microsoft.Practices.Unity.dll
+D:\Electracraft App\Client\Website\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Electracraft App\Client\Website\bin\Microsoft.Practices.ServiceLocation.dll
+D:\Electracraft App\Client\Website\bin\EntityFramework.xml
+D:\Electracraft App\Client\Website\bin\EntityFramework.SqlServer.xml
+D:\Electracraft App\Client\Website\bin\HtmlAgilityPack.pdb
+D:\Electracraft App\Client\Website\bin\HtmlAgilityPack.xml
+D:\Electracraft App\Client\Website\bin\Newtonsoft.Json.xml
+D:\Electracraft App\Client\Website\bin\System.Net.Http.Formatting.xml
+D:\Electracraft App\Client\Website\bin\System.Web.Http.xml
+D:\Electracraft App\Client\Website\bin\System.Web.Http.WebHost.xml
+D:\Electracraft App\Client\Website\bin\System.Data.SQLite.xml
+D:\Electracraft App\Client\Website\bin\ar\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\cs\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\de\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\es\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\fr\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\he\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\hi\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\it\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\ja\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\ko\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\nl\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\pl\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\pt\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\ru\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\Electracraft App\Client\Website\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Client.Website.dll.config
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Client.Website.dll
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Client.Website.pdb
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Framework.BusinessRules.dll
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Framework.DataAccess.dll
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Framework.DataObjects.dll
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Framework.Utility.dll
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Framework.Web.dll
+D:\Projects\OnTrack-Git\Client\Website\bin\Xero.Api.dll
+D:\Projects\OnTrack-Git\Client\Website\bin\Xero.Api.Example.Applications.dll
+D:\Projects\OnTrack-Git\Client\Website\bin\Xero.Api.Example.TokenStores.dll
+D:\Projects\OnTrack-Git\Client\Website\bin\XeroApi.dll
+D:\Projects\OnTrack-Git\Client\Website\bin\XeroApi.Validation.dll
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Framework.BusinessRules.pdb
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Framework.DataAccess.pdb
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Framework.DataObjects.pdb
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Framework.Utility.pdb
+D:\Projects\OnTrack-Git\Client\Website\bin\Electracraft.Framework.Web.pdb
+D:\Projects\OnTrack-Git\Client\Website\bin\XeroApi.pdb
+D:\Projects\OnTrack-Git\Client\Website\bin\XeroApi.Validation.pdb
+D:\Projects\OnTrack-Git\Client\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+D:\Projects\OnTrack-Git\Client\Website\obj\Debug\Electracraft.Client.Website.dll
+D:\Projects\OnTrack-Git\Client\Website\obj\Debug\Electracraft.Client.Website.pdb
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Client.Website.dll.config
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Client.Website.dll
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Client.Website.pdb
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Framework.BusinessRules.dll
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Framework.DataAccess.dll
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Framework.DataObjects.dll
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Framework.Utility.dll
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Framework.Web.dll
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Xero.Api.dll
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Xero.Api.Example.Applications.dll
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Xero.Api.Example.TokenStores.dll
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\XeroApi.dll
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\XeroApi.Validation.dll
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Framework.BusinessRules.pdb
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Framework.DataAccess.pdb
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Framework.Utility.pdb
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\Electracraft.Framework.Web.pdb
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\XeroApi.pdb
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\bin\XeroApi.Validation.pdb
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\obj\Debug\Electracraft.Client.Website.dll
+D:\Projects\Ontrack 2017 git with chamila\Client\Website\obj\Debug\Electracraft.Client.Website.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\obj\Debug\Electracraft.Client.Website.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\obj\Debug\Electracraft.Client.Website.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Client.Website.dll.config
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Client.Website.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Client.Website.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Framework.BusinessRules.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Framework.DataAccess.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Framework.DataObjects.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Framework.Utility.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Framework.Web.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Xero.Api.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Xero.Api.Example.Applications.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Xero.Api.Example.TokenStores.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\XeroApi.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\XeroApi.Validation.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Framework.BusinessRules.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Framework.DataAccess.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Framework.DataObjects.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Framework.Utility.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\Electracraft.Framework.Web.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\XeroApi.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Client\Website\bin\XeroApi.Validation.pdb

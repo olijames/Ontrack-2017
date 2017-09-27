@@ -1,0 +1,51 @@
+﻿using System;
+using Electracraft.Framework.Web;
+using Electracraft.Framework.Utility;
+
+namespace Electracraft.Client.Website
+{
+    public partial class Default : PageBase
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                //Remove session and login details if on login page.
+                Logout();
+            }
+            string Action = Request.QueryString["action"];
+            if (Action == "logout")
+            {
+                Logout();
+                Response.Redirect("~/");
+            }
+        }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+        }
+        protected void btnMaterialInput_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MaterialInput.aspx", false);
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Login(txtUsername.Text, txtPassword.Text, chkRememberMe.Checked);
+            if (CurrentSessionContext==null || CurrentSessionContext.Owner == null)
+            {
+                ShowMessage("Login failed for user " + txtUsername.Text + ". ");
+                
+            }
+            else
+            {
+                string returnUrl = Request.QueryString["returnurl"];
+                if (!string.IsNullOrEmpty(returnUrl))
+                    Response.Redirect(returnUrl);
+                else
+                    Response.Redirect(Constants.URL_Home);
+            }
+        }
+
+    }
+}

@@ -1,0 +1,318 @@
+	.weekend{ background: rgb(54, 54, 54)!important; color:white !important;}
+	.gantt_scale_cell.today{ background: #BD7990!important; color:white !important; opacity:1!important;}
+
+	.line {
+		height: 900px!important;
+		position:absolute;
+		z-index: 99;
+		border: 1px solid black;
+		background-color:; red!important;
+		margin-left: 0.5px;
+	}
+
+	.task_class {
+	    font-size: 36px; 
+	}	
+
+	.gantt_task_content, sup {
+	    cursor:pointer!important;
+	}
+
+	.gantt_task_content {
+		padding-left: 1px;
+	}
+
+	.gantt_task_content i {
+	    font-size: 14px;
+	}
+
+	.gantt_task_content b {
+	    font-size: 16px;
+	}
+
+	.gantt_task_line, .gantt_task_progress {
+	    border: none;
+    	border-radius: 5px;
+    	height: 40%
+	}
+
+
+	.gantt_last_cell {
+		border-right: none!important;
+	}
+
+	.gantt_task_row.gantt_selected {
+		background-color: rgb(245, 245, 245);
+	}
+
+	.gantt_task_cell.gantt_selected {
+		box-shadow: 0 0 5px black!important;
+	}
+
+	.gantt_task_row, .gantt_row {
+	    opacity: 0.8;
+	}
+
+	.gantt_row.odd, .gantt_task_row.odd {
+		  background-color: #F5EDE3;
+	}
+
+	.gantt_row.odd, .gantt_task_row.odd.leftArrow, .gantt_task_row.odd.rightArrow, .gantt_task_row.odd.lefttArrow {
+		  color: #cecece;
+	}
+
+	.gantt_row, .gantt_task_row {
+		  background-color: #cecece;
+	}
+
+	.gantt_task_line, .gantt_project {
+	}
+
+	.gantt_blue 	{background-color: #3366CC !important;}
+	.gantt_red 		{background-color: #DC3912 !important;}
+	.gantt_orange 	{background-color: #E67300 !important;}
+	.gantt_yellow 	{background-color: #FF9900 !important;}
+	.gantt_green 	{background-color: #109618 !important;}
+	.gantt_purple 	{background-color: #990099 !important;}
+	.gantt_pink 	{background-color: #DD4477 !important;}
+
+
+
+
+.project {
+		opacity: 0.6!important;
+		border-top: 1px solid;
+    	border-radius: 0px;
+    	height: 100%
+}
+	
+	.gantt_task_line.project {
+    	height: 33px!important;
+	}
+
+.project .task_right, .project .task_left, .project .gantt_drag_progress, .gantt_message_area {
+	display: none!important;
+}
+
+
+.shade {
+	border-bottom: 4px solid!important;
+	opacity: 1!important;
+	background:rgba(255,255,255,1)!important;
+}
+
+.parent_row .gantt_task_cell {
+	background:rgba(255,255,255,1)!important;
+}
+
+.gantt_task_line.add, .gantt_task_line.add.gantt_task_content {
+	border-radius: 50px;
+	width: 37px!important;
+	height: 30px!important;
+	margin-left: -70px;
+	opacity: 1!important;
+	background-color: #d23f31;
+	padding-top: 2px!important;
+}
+
+i.fi-plus {
+	margin-bottom: -25px!important;
+	font-size: 25px!important;
+}
+
+.gantt_task_line.unscheduled {
+	border-radius: 50px;
+	width: 220px!important;
+	opacity: 0.6;
+	overflow: hidden!important;
+	border: 2px solid white;
+	border-bottom: red!important;
+	padding-left: 6px!important;
+
+
+}
+
+.unscheduled .gantt_task_content{
+	max-width: 200px!important;
+	text-align: left!important;
+}
+
+
+
+#gantt_add {
+	text-align: right!important;
+}
+
+
+b.gantt_task_content {
+	opacity: 0.8;
+}
+
+.lighten {
+	opacity: 0.4;
+}
+
+
+[data-magellan-expedition], [data-magellan-expedition-clone] {
+    padding: 0px!important;
+    z-index: 50;
+}
+
+.rightArrow {
+    color: white;
+    font-size: 35px;
+    text-align: center;
+}
+
+.leftArrow {
+    color: white;
+    font-size: 35px;
+    text-align: center;
+}
+
+.leftArrow i, .rightArrow i {
+	opacity: 0.8;
+}
+
+.gantt_task_content i.fi-minus { 
+	font-size: 10px!important;
+	margin: 3px;
+}
+
+.gantt_task_row i { 
+	font-size: 20px!important;
+	cursor:pointer!important;
+}
+
+.dark {
+	color: grey!important;
+}
+
+.gchart a {
+	height: 35px;
+	padding-top: 10px!important;
+	line-height: 16px!important;
+	font-size: 16px;
+	margin-bottom: 1px!important;
+}
+
+.scale_gone {
+	display: none!important;
+	height: 0px!important;
+}
+
+.scale_stay {
+	height: 35px!important;
+	line-height: 35px!important;
+	font-size: 12px!important;
+}
+
+.button-group {
+	width: 100%!important;
+	text-align: center!important;
+	margin-left: 10px!important;
+	font-family: arial;
+	font-size: 12px;
+}
+
+.chrono_task {
+	opacity: 0.7!important;
+}
+
+/*.gantt_task_line.qright {
+	opacity: 0.8;
+	border-right: 3px solid white;
+	border-top: 3px solid white;
+	border-bottom-left-radius: 50px;
+	border-top-left-radius: 50px;
+}*/
+
+.gantt_task_line.qright {
+	background: #88b7d5;
+	border: 2px solid rgba(255, 255, 255, .8);
+	margin-left: -25px!important;
+}
+
+.gantt_task_line.qright:before, .gantt_task_line.qright:after{
+    right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.gantt_task_line.qright:after {
+	border-color: rgba(136, 183, 213, 0);
+	/*border-right-color: black;*/
+	border-width: 11px;
+	margin-top: -11px;
+}
+.gantt_task_line.qright:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-right-color: rgba(255, 255, 255, .6);
+	border-width: 14px;
+	margin-top: -14px;
+}
+
+
+/*gantt_task_line.qleft {
+	opacity: 0.8;
+	border-left: 3px solid white;
+	border-bottom: 3px solid white;
+	border-bottom-right-radius: 20px;
+	border-top-right-radius: 20px;
+}
+*/
+
+.gantt_task_line.qleft {
+	background: #88b7d5;
+	border: 2px solid rgba(255, 255, 255, .8);
+	margin-left: 25px;
+}
+
+.gantt_task_line.qleft:after, .gantt_task_line.qleft:before{
+    left: 100%;
+	top: 50%;
+	border: solid;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.gantt_task_line.qleft:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-width: 11px;
+	margin-top: -11px;
+}
+.gantt_task_line.qleft:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-left-color: rgba(255, 255, 255, .6);
+	border-width: 14px;
+	margin-top: -14px;
+}
+
+.gchart p { font-size: 14px; }
+
+@media only screen and (max-width: 850px) {
+
+   .gchart p { font-size: 12px; }
+
+}
+
+@media only screen and (max-width: 650px) {
+
+   .gchart p { font-size: 10px; }
+   .gchart .button{ padding-left: 5px!important; padding-right: 5px!important; }
+}
+
+@media only screen and (max-width: 450px) {
+
+   .gchart p { font-size: 8px;  }
+   .gchart .button{ padding-left: 5px!important; padding-right: 5px!important; }
+
+}

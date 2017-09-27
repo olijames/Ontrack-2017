@@ -1,0 +1,27 @@
+D:\Projects\Electracraft App\trunk\Framework\Utility\bin\Release\Electracraft.Framework.Utility.dll
+D:\Projects\Electracraft App\trunk\Framework\Utility\bin\Release\Electracraft.Framework.Utility.pdb
+D:\Projects\Electracraft App\trunk\Framework\Utility\bin\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\Electracraft App\trunk\Framework\Utility\bin\Release\EntityFramework.dll
+D:\Projects\Electracraft App\trunk\Framework\Utility\bin\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Electracraft App\trunk\Framework\Utility\bin\Release\EntityFramework.xml
+D:\Projects\Electracraft App\trunk\Framework\Utility\obj\Release\Utility.csprojResolveAssemblyReference.cache
+D:\Projects\Electracraft App\trunk\Framework\Utility\obj\Release\Electracraft.Framework.Utility.dll
+D:\Projects\Electracraft App\trunk\Framework\Utility\obj\Release\Electracraft.Framework.Utility.pdb
+D:\Projects\OnTrack-Git\Framework\Utility\bin\Release\Electracraft.Framework.Utility.dll
+D:\Projects\OnTrack-Git\Framework\Utility\bin\Release\Electracraft.Framework.Utility.pdb
+D:\Projects\OnTrack-Git\Framework\Utility\bin\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\OnTrack-Git\Framework\Utility\bin\Release\EntityFramework.dll
+D:\Projects\OnTrack-Git\Framework\Utility\bin\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\OnTrack-Git\Framework\Utility\bin\Release\EntityFramework.xml
+D:\Projects\OnTrack-Git\Framework\Utility\obj\Release\Utility.csprojResolveAssemblyReference.cache
+D:\Projects\OnTrack-Git\Framework\Utility\obj\Release\Electracraft.Framework.Utility.dll
+D:\Projects\OnTrack-Git\Framework\Utility\obj\Release\Electracraft.Framework.Utility.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\Utility\bin\Release\Electracraft.Framework.Utility.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\Utility\bin\Release\Electracraft.Framework.Utility.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\Utility\bin\Release\Electracraft.Framework.DataObjects.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\Utility\bin\Release\EntityFramework.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\Utility\bin\Release\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Ontrack 2017 git with chamila\Framework\Utility\bin\Release\EntityFramework.xml
+D:\Projects\Ontrack 2017 git with chamila\Framework\Utility\obj\Release\Utility.csprojResolveAssemblyReference.cache
+D:\Projects\Ontrack 2017 git with chamila\Framework\Utility\obj\Release\Electracraft.Framework.Utility.dll
+D:\Projects\Ontrack 2017 git with chamila\Framework\Utility\obj\Release\Electracraft.Framework.Utility.pdb

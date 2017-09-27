@@ -1,0 +1,389 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Electracraft.Framework.Web;
+using Electracraft.Framework.DataObjects;
+using Electracraft.Framework.Utility;
+using System.Diagnostics;
+using Electracraft.Framework.Utility.Exceptions;
+
+namespace Electracraft.Client.Website.UserControls
+{
+	public partial class ContactPanelHome : UserControlBase
+	{
+		//static string searchTxt;
+		struct ContactDays
+		{
+			public DOContactBase Contact { get; set; }
+			public int Days { get; set; }
+		}
+
+		public DOContact Contact { get; set; }
+		public object Customers { get; private set; }
+
+		protected void Page_Init(object sender, EventArgs e)
+		{
+			btnContact.Text = Contact.DisplayName;
+			btnContact.CommandArgument = Contact.ContactID.ToString();
+		}
+		private void LoadCustomers()
+		{
+			Stopwatch st = new Stopwatch();
+			st.Start();
+			if (RpActiveCustomers.DataSource == null || Rp_InactiveCustomers.DataSource == null)
+			{
+				//Select all the customers for a contact
+				List<DOBase> customers = ParentPage.CurrentBRContact.SelectCustomers(Contact.ContactID);
+				List<DOBase> activeCust = customers;
+				List<DOBase> inactiveCust = ParentPage.CurrentBRContact.SelectInactiveCustomers(Contact.ContactID);
+				DOContactInfo user = null;
+				foreach (var doBase in activeCust)
+				{
+					var checkUser = (DOContactInfo)doBase;
+					if (checkUser.ContactID == Contact.ContactID)
+					{
+						user = checkUser;//logged in entity
+					}
+				}
+				if (user == null)
+				{
+					activeCust.Insert(0, Contact);
+				}
+				else
+				{
+					activeCust.Remove(user);
+					activeCust.Insert(0, user);
+					inactiveCust.Remove(user);
+				}
+				RpActiveCustomers.DataSource = activeCust;
+				RpActiveCustomers.DataBind();
+				Rp_InactiveCustomers.DataSource = inactiveCust;
+				Rp_InactiveCustomers.DataBind();
+				st.Stop();
+				long ms = st.ElapsedMilliseconds;
+			}
+		}
+
+		protected string GetInactiveText()
+		{
+			return Contact.Active ? string.Empty : "inactive";
+		}
+
+		protected string GetExpandIcon()
+		{
+			return "none".Equals(pnlMain.Style["display"]) ? "fi-plus" : "fi-minus";
+		}
+
+		protected void Page_PreRender(object sender, EventArgs e)
+		{
+			phNewCustomer.Visible = Contact.Active;
+			if (IsPostBack)
+			{
+				//If active customers are not loaded already.
+				if (RpActiveCustomers.DataSource == null && RpActiveCustomers.Visible)
+					LoadCustomers();
+
+				//If inactive customers are not loaded already.
+				if (Rp_InactiveCustomers.DataSource == null && Rp_InactiveCustomers.Visible)
+					LoadCustomers();
+
+				//If sites are visible, load my sites.
+				if (rpSites.Visible)
+				{
+					List<DOBase> CustomerSites = ParentPage.CurrentBRSite.SelectContactSites(Contact.ContactID);
+					var ActiveSites = from DOSite site in CustomerSites where site.Active select site;
+					if (rpSites.DataSource == null)
+						rpSites.DataSource = ActiveSites;
+					rpSites.DataBind();
+					rpSites.Focus();
+				}
+			}
+		}
+
+		protected void btnContact_Click(object sender, EventArgs e)
+		{
+			if (Contact != null)
+			{
+				ParentPage.CurrentSessionContext.CurrentContact = Contact;
+				Response.Redirect(Constants.URL_ContactHome);
+			}
+		}
+		protected void btnSelectSite_Click(object sender, EventArgs e)
+		{
+			Button b = sender as Button;
+			if (b != null)
+			{
+				if (b.CommandName == "SelectSite")
+				{
+					DOSite Site = ParentPage.CurrentBRSite.SelectSite(new Guid(b.CommandArgument.ToString()));
+					ParentPage.CurrentSessionContext.CurrentSite = Site;
+					Response.Redirect(Constants.URL_SiteHome);
+				}
+			}
+		}
+		protected void btnSelectCustomer_Click(object sender, EventArgs e)
+		{
+			LinkButton b = sender as LinkButton;
+			if (b != null)
+			{
+				if (b.CommandName == "Individual")
+				{
+					Guid contactID = new Guid(b.CommandArgument.ToString());
+					DOContact customer = ParentPage.CurrentBRContact.SelectCustomer(contactID);
+					ParentPage.CurrentSessionContext.CurrentContact = Contact;
+					ParentPage.CurrentSessionContext.CurrentCustomer = customer;
+					ParentPage.CurrentSessionContext.CurrentContractee = null;
+					Response.Redirect(Constants.URL_CustomerHome);
+					
+				}
+
+				if (b.CommandName == "Company")
+				{
+					Guid contactId = new Guid(b.CommandArgument.ToString());
+					DOContact contractee = ParentPage.CurrentBRContact.SelectContact(contactId);
+					ParentPage.CurrentSessionContext.CurrentContact = Contact;
+					ParentPage.CurrentSessionContext.CurrentContractee = contractee;
+					Response.Redirect(Constants.URL_CustomerHome);
+				}
+			}
+		}
+
+		protected void btnAddNewCustomer_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(txtNewCustomerEmail.Text))
+			{
+				ParentPage.ShowMessage("Please enter the customer email address.");
+			}
+			else
+			{
+				ParentPage.CurrentSessionContext.CurrentContact = Contact;
+				Response.Redirect(Constants.URL_CustomerDetails + "?new=" + Server.UrlEncode(txtNewCustomerEmail.Text));
+			}
+		}
+
+		Dictionary<Guid, int> OutstandingJobsCount = new Dictionary<Guid, int>();
+		protected int GetOutstandingJobsCount(object customer)
+		{
+			Guid CustomerID;
+			int count = 0;
+			if (customer is DOCustomer)
+			{
+				CustomerID = ((DOCustomer)customer).CustomerID;
+				if (!OutstandingJobsCount.ContainsKey(CustomerID))
+				{
+
+					List<DOBase> Sites = ParentPage.CurrentBRSite.SelectCustomerSites(CustomerID, Contact.ContactID);
+					foreach (DOSite site in Sites)
+					{
+						count += GetOutstandingJobsCountSite(site);
+					}
+					OutstandingJobsCount.Add(CustomerID, count);
+				}
+			}
+			else if (customer is DOContact)
+			{
+				CustomerID = ((DOContact)customer).ContactID;
+				if (!OutstandingJobsCount.ContainsKey(CustomerID))
+				{
+					List<DOBase> Sites = ParentPage.CurrentBRSite.SelectContracteeSites(CustomerID, Contact.ContactID);
+					foreach (DOSite site in Sites)
+					{
+						count += GetOutstandingJobsCountSite(site);
+					}
+					OutstandingJobsCount.Add(CustomerID, count);
+				}
+
+			}
+			else
+			{
+				throw new Exception();
+			}
+
+			return OutstandingJobsCount[CustomerID];
+		}
+
+		protected DOTask GetEarliestSiteTask(DOSite Site, DOContact Contact)
+		{
+			List<DOBase> Tasks = new List<DOBase>();
+			foreach (DOJob Job in GetSiteJobs(Site))
+			{
+				Tasks.AddRange(ParentPage.CurrentBRJob.SelectTasks(Job.JobID, Guid.Empty, false));
+			}
+			DOTask earliest = (from DOTask t in Tasks
+							   where (t.StartDate != DateAndTime.NoValueDate && t.ContractorID == Contact.ContactID)
+							   orderby t.StartDate
+							   select t).FirstOrDefault<DOTask>();
+			return earliest;
+		}
+
+		Dictionary<Guid, List<DOBase>> SiteJobs = new Dictionary<Guid, List<DOBase>>();
+		protected List<DOBase> GetSiteJobs(DOSite Site)
+		{
+			if (!SiteJobs.ContainsKey(Site.SiteID))
+			{
+				List<DOBase> Jobs = ParentPage.CurrentBRJob.SelectViewableJobs(Site, Contact.ContactID);
+				SiteJobs.Add(Site.SiteID, Jobs);
+			}
+			return SiteJobs[Site.SiteID];
+		}
+
+		Dictionary<Guid, int> OutstandingJobsCountSite = new Dictionary<Guid, int>();
+		protected int GetOutstandingJobsCountSite(DOSite Site)
+		{
+			if (!OutstandingJobsCountSite.ContainsKey(Site.SiteID))
+			{
+				List<DOBase> Jobs = GetSiteJobs(Site);
+				var OutstandingJobs = from DOJob Job in Jobs
+									  where Job.JobStatus == DOJob.JobStatusEnum.Incomplete
+									  select Job;
+				OutstandingJobsCountSite.Add(Site.SiteID, OutstandingJobs.Count());
+			}
+
+			return OutstandingJobsCountSite[Site.SiteID];
+		}
+
+		protected string GetSiteClass(object data, int flag)
+		{
+			int oj = GetOutstandingJobsCount(data);
+			if (oj > 0)
+			{
+				if (flag == 1)
+					return "active";
+				return "remove";
+			}
+			if (flag == 1)
+				return "remove";
+			return "inactive";
+		}
+
+
+		//This is a copy of the code in the ascx file - should merge these at some stage
+		protected int GetNextTaskDays(object DataItem)
+		{
+			Guid CustomerContactID;
+			DOTask IncompleteTask = null;
+			if (DataItem is DOContact)
+			{
+				CustomerContactID = ((DOContact)DataItem).ContactID;
+				IncompleteTask = ParentPage.CurrentBRJob.SelectContracteeTaskNextIncomplete(CustomerContactID, Contact.ContactID);
+			}
+			else if (DataItem is DOCustomer)
+			{
+				CustomerContactID = ((DOCustomer)DataItem).ContactID;
+				IncompleteTask = ParentPage.CurrentBRJob.SelectCustomerTaskNextIncomplete(CustomerContactID, Contact.ContactID);
+			}
+			else
+			{
+				throw new Exception();
+			}
+
+			if (IncompleteTask != null && IncompleteTask.StartDate == DateAndTime.NoValueDate)
+			{
+				return int.MaxValue - 1;
+			}
+			else if (IncompleteTask == null)
+			{
+				return int.MaxValue;
+			}
+			else
+			{
+				DOTask task = IncompleteTask;
+				DateTime current = DateAndTime.GetCurrentDateTime();
+				DateTime currentDate = new DateTime(current.Year, current.Month, current.Day);
+				int Days = (task.StartDate - currentDate).Days;
+				return Days;
+			}
+		}
+
+		protected void JobFinder_Click(object sender, EventArgs e)
+		{
+			var jobNumberAuto1 = Request["Searchtext"].TrimStart(',');
+			var jobNumberAuto = jobNumberAuto1.TrimEnd(',');
+			int result;
+			ParentPage.CurrentSessionContext.CurrentContact = this.Contact;
+			if (int.TryParse(jobNumberAuto, out result))
+			{
+				DOJob Job = ParentPage.CurrentBRJob.FindJob(int.Parse(jobNumberAuto));
+				if (Job != null)
+				{
+					DOSite site = ParentPage.CurrentBRSite.SelectSite(Job.SiteID);
+					if (site != null)
+					{
+						if (Job != null && site.Active == true)
+						{
+							ParentPage.CurrentSessionContext.CurrentJob = Job;
+							Response.Redirect(Constants.URL_JobSummary + "?jobid=" + Job.JobID);
+							HttpContext.Current.ApplicationInstance.CompleteRequest();
+						}
+					}
+					else
+					{
+						Error.Visible = true;
+					}
+				}
+			}
+			else
+			{
+				Error.Visible = true;
+			}
+		}
+
+		/// <summary>
+		/// View your active customers
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		protected void ViewActiveCustomers_btn_Click(object sender, EventArgs e)
+		{
+			if (RpActiveCustomers.Visible == false)
+			{
+				RpActiveCustomers.Visible = true;
+				if (RpActiveCustomers.DataSource == null)
+					LoadCustomers();
+			}
+			else
+			{
+				RpActiveCustomers.Visible = false;
+			}
+		}
+
+		/// <summary>
+		/// View your inactive customers
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		protected void ViewInactiveCustomers_Click(object sender, EventArgs e)
+		{
+			if (Rp_InactiveCustomers.Visible == false)
+			{
+				Rp_InactiveCustomers.Visible = true;
+				if (Rp_InactiveCustomers.DataSource == null)
+					LoadCustomers();
+			}
+			else
+				Rp_InactiveCustomers.Visible = false;
+		}
+
+		/// <summary>
+		/// View the site
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		protected void Sites_btn_Click(object sender, EventArgs e)
+		{
+			if (rpSites.Visible == false)
+			{
+				rpSites.Visible = true;
+				List<DOBase> CustomerSites = ParentPage.CurrentBRSite.SelectContactSites(Contact.ContactID);
+				var ActiveSites = from DOSite site in CustomerSites where site.Active select site;
+				rpSites.DataSource = ActiveSites;
+				rpSites.Focus();
+			}
+			else
+				rpSites.Visible = false;
+		}
+	}
+}

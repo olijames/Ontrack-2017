@@ -1,0 +1,77 @@
+D:\Electracraft\trunk\ontrack\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.dll
+D:\Electracraft\trunk\ontrack\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.pdb
+D:\Electracraft\trunk\ontrack\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft\trunk\ontrack\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.dll
+D:\Electracraft\trunk\ontrack\Framework\DataAccess\bin\Debug\EntityFramework.dll
+D:\Electracraft\trunk\ontrack\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft\trunk\ontrack\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.pdb
+D:\Electracraft\trunk\ontrack\Framework\DataAccess\bin\Debug\EntityFramework.xml
+D:\Electracraft\trunk\ontrack\Framework\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Electracraft\trunk\ontrack\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.dll
+D:\Electracraft\trunk\ontrack\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataAccess\bin\Debug\EntityFramework.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.pdb
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataAccess\bin\Debug\EntityFramework.xml
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.dll
+D:\Electracraft\trunk\ontrack - 4.5\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.pdb
+D:\Projects\Git copy\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.dll
+D:\Projects\Git copy\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.pdb
+D:\Projects\Git copy\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Projects\Git copy\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.dll
+D:\Projects\Git copy\Framework\DataAccess\bin\Debug\EntityFramework.dll
+D:\Projects\Git copy\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Projects\Git copy\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.pdb
+D:\Projects\Git copy\Framework\DataAccess\bin\Debug\EntityFramework.xml
+D:\Projects\Git copy\Framework\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Projects\Git copy\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.dll
+D:\Projects\Git copy\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.pdb
+D:\OnTrack-Git\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.dll
+D:\OnTrack-Git\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.pdb
+D:\OnTrack-Git\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\OnTrack-Git\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.dll
+D:\OnTrack-Git\Framework\DataAccess\bin\Debug\EntityFramework.dll
+D:\OnTrack-Git\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\OnTrack-Git\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.pdb
+D:\OnTrack-Git\Framework\DataAccess\bin\Debug\EntityFramework.xml
+D:\OnTrack-Git\Framework\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\OnTrack-Git\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.dll
+D:\OnTrack-Git\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.pdb
+D:\Electracraft App\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.dll
+D:\Electracraft App\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.pdb
+D:\Electracraft App\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Electracraft App\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.dll
+D:\Electracraft App\Framework\DataAccess\bin\Debug\EntityFramework.dll
+D:\Electracraft App\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Electracraft App\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.pdb
+D:\Electracraft App\Framework\DataAccess\bin\Debug\EntityFramework.xml
+D:\Electracraft App\Framework\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Electracraft App\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.dll
+D:\Electracraft App\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.pdb
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.dll
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.pdb
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.dll
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.dll
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Debug\EntityFramework.dll
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.pdb
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.pdb
+D:\Projects\OnTrack-Git\Framework\DataAccess\bin\Debug\EntityFramework.xml
+D:\Projects\OnTrack-Git\Framework\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Projects\OnTrack-Git\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.dll
+D:\Projects\OnTrack-Git\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataAccess.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataAccess\bin\Debug\Electracraft.Framework.DataObjects.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataAccess\bin\Debug\Electracraft.Framework.Utility.pdb
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.dll
+C:\Users\Bar\Documents\Ontrack 2017 - Safe\Framework\DataAccess\obj\Debug\Electracraft.Framework.DataAccess.pdb

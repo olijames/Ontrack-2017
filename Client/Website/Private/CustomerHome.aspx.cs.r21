@@ -1,0 +1,221 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Electracraft.Framework.Web;
+using Electracraft.Framework.Utility;
+using Electracraft.Framework.DataObjects;
+
+namespace Electracraft.Client.Website.Private
+{
+    struct SiteCount{
+        public DOSite site;
+        public int count;
+        public SiteCount(DOSite site, int count){ this.site = site; this.count = count;}
+    }
+
+    [PrivatePage]
+    public partial class CustomerHome : PageBase
+    {
+        public void Page_Init(object sender, EventArgs e)
+        {
+            if (CurrentSessionContext.CurrentContact == null)
+                Response.Redirect(Constants.URL_Home);
+            if (CurrentSessionContext.CurrentCustomer == null && CurrentSessionContext.CurrentContractee == null)
+                Response.Redirect(Constants.URL_Home);
+
+            ClearSite();
+            CurrentSessionContext.LastContactPageType = SessionContext.LastContactPageTypeEnum.Customer;
+        }
+
+        protected DOContact GetInvitationContact()
+        {
+            DOContact CustomerContact = CurrentBRContact.SelectContact(CurrentSessionContext.CurrentCustomer.ContactID);
+            //If the customer is a company, check the comapny manager instead.
+            if (CustomerContact.ContactType == DOContact.ContactTypeEnum.Company)
+                CustomerContact = CurrentBRContact.SelectContact(CustomerContact.ManagerID);
+            return CustomerContact;
+        }
+
+        protected void Page_Load()
+        {
+            btnInviteCustomer.Visible = false;
+            if (CurrentSessionContext.CurrentCustomer != null)
+            {
+                DOContact InvitationContact = GetInvitationContact();
+                if (InvitationContact.PendingUser)
+                {
+                    List<DOBase> Invitations = CurrentBRContact.SelectCustomerInvitations(InvitationContact.ContactID);
+                    if (Invitations.Count == 0)
+                        btnInviteCustomer.Visible = true;
+                }
+            }
+            else
+            {
+                btnRemoveCustomer.Visible = false;
+            }
+        }
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            List<DOBase> Sites;
+            if (CurrentSessionContext.CurrentCustomer != null)
+            {
+                Sites = CurrentBRSite.SelectCustomerSites(CurrentSessionContext.CurrentCustomer.CustomerID, CurrentSessionContext.CurrentContact.ContactID);
+                litCustomerName.Text = CurrentSessionContext.CurrentCustomer.DisplayName;
+                litCustomerName2.Text = CurrentSessionContext.CurrentCustomer.DisplayName; 
+                btnEditCustomer.Visible = true;
+            }
+            else
+            {
+                Sites = CurrentBRSite.SelectContracteeSites(CurrentSessionContext.CurrentContractee.ContactID, CurrentSessionContext.CurrentContact.ContactID);
+                litCustomerName.Text = CurrentSessionContext.CurrentContractee.DisplayName;
+                litCustomerName2.Text = CurrentSessionContext.CurrentContractee.DisplayName;
+                btnEditCustomer.Visible = false;
+            }
+
+            //Get outstanding job count for each site.
+            List<SiteCount> scList = new List<SiteCount>();
+            foreach (DOSite site in Sites)
+            {
+                scList.Add(new SiteCount(site, GetOutstandingJobsCount(site)));
+            }
+
+            //Sites with no jobs at end of list.
+            var sorted = from SiteCount scSort in scList
+                         orderby (scSort.count > 0 ? 1 : 0) descending, scSort.site.Address1
+                         select scSort;
+
+            List<DOSite> sortedSites = new List<DOSite>();
+            foreach (SiteCount scToSort in sorted.ToList<SiteCount>())
+            {
+                sortedSites.Add(scToSort.site);
+            }
+
+            rpSites.DataSource = sortedSites;
+            rpSites.DataBind();
+
+            DataBind();
+        }
+
+        protected void btnAddSite_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Constants.URL_SiteDetails);
+        }
+
+        protected void btnSelectSite_Click(object sender, EventArgs e)
+        {
+            LinkButton b = sender as LinkButton;
+            if (b != null)
+            {
+                if (b.CommandName == "SelectSite")
+                {
+                    DOSite Site = CurrentBRSite.SelectSite(new Guid(b.CommandArgument.ToString()));
+                    CurrentSessionContext.CurrentSite = Site;
+                    Response.Redirect(Constants.URL_SiteHome);
+                }
+            }
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Constants.URL_Home);
+        }
+
+        protected void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Constants.URL_CustomerDetails);
+        }
+
+        protected void btnRemoveCustomer_Click(object sender, EventArgs e)
+        {
+            if (CurrentSessionContext.CurrentCustomer != null)
+            {
+                DOContactCustomer cc = CurrentBRContact.SelectContactCustomer(CurrentSessionContext.CurrentContact.ContactID, CurrentSessionContext.CurrentCustomer.CustomerID);
+                CurrentBRContact.DeleteContactCustomer(cc);
+                Response.Redirect(Constants.URL_Home);
+
+            }
+        }
+
+        protected void btnInviteCustomer_Click(object sender, EventArgs e)
+        {
+            DOContact InvitationContact = GetInvitationContact();
+            //Update password.
+            string TempPassword = CurrentBRGeneral.GenerateTempPassword();
+            string Hash = Electracraft.Framework.Utility.PasswordHash.CreateHash(TempPassword);
+            InvitationContact.PasswordHash = Hash;
+            CurrentBRContact.SaveContact(InvitationContact);
+
+            CurrentBRContact.CreateCustomerInvitation(InvitationContact.ContactID, CurrentSessionContext.CurrentContact.ContactID);
+
+            //Send email.
+            string Subject = "You have been invited to Ontrack";
+            string Body = string.Format("{0} has added you as a customer and wants you to join OnTrack.", CurrentSessionContext.CurrentContact.DisplayName);
+            Body += string.Format("<br />To login, <a href=\"{0}\">click here</a> and enter the following details:<br />", CurrentBRGeneral.SelectWebsiteBasePath() + "/default.aspx");
+            Body += string.Format("Email address: {0}<br />Password: {1}", InvitationContact.Email, TempPassword);
+            Body += string.Format("<br /><br />Please remember to change your password once you log in.");
+
+            if (Constants.EMAIL__TESTMODE)
+            {
+                Body += "<br/><br/>";
+                Body += "Sent By: " + CurrentSessionContext.CurrentContact.DisplayName + "<br />";
+                Body += "Sent To: " + InvitationContact.DisplayName + " (" + InvitationContact.Email + ")";
+            }
+            CurrentBRGeneral.SendEmail(Constants.EmailSender, InvitationContact.Email, Subject, Body);
+
+            ShowMessage("An invitation has been sent to " + CurrentSessionContext.CurrentCustomer.DisplayName);
+            btnInviteCustomer.Visible = false;
+        }
+
+
+        protected string GetCustomerName(Guid SiteID)
+        {
+            DOCustomer customer = CurrentBRContact.SelectSiteCustomer(SiteID, CurrentSessionContext.CurrentContact.ContactID);
+            if (customer == null)
+                return string.Empty;
+            else
+                return customer.DisplayName;
+        }
+        protected string GetSiteOwnerName(Guid SiteID)
+        {
+            DOSite site = CurrentBRSite.SelectSite(SiteID);
+            if (site == null)
+                return string.Empty;
+            else
+                return site.OwnerFirstName + " " + site.OwnerLastName;
+        }
+
+        Dictionary<Guid, int> OutstandingJobsCount = new Dictionary<Guid, int>();
+
+        protected int GetOutstandingJobsCount(DOSite Site)
+        {
+            if (!OutstandingJobsCount.ContainsKey(Site.SiteID))
+            {
+                List<DOBase> Jobs = CurrentBRJob.SelectViewableJobs(Site, CurrentSessionContext.CurrentContact.ContactID);
+                var OutstandingJobs = from DOJob Job in Jobs
+                                      where Job.JobStatus == DOJob.JobStatusEnum.Incomplete
+                                      select Job;
+                OutstandingJobsCount.Add(Site.SiteID, OutstandingJobs.Count());
+            }
+
+            return OutstandingJobsCount[Site.SiteID];
+        }
+
+        protected string GetSiteClass(DOSite Site)
+        {
+            int oj = GetOutstandingJobsCount(Site);
+            if (oj > 0)
+            {
+                return "active";
+            }
+            else
+            {
+                return "inactive";
+            }
+        }
+
+
+    }
+}

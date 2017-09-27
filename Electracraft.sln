@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{189236E2-A7E3-413A-B486-08D3CB9001B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{CA51CF3B-63C6-4D47-B7D5-25CBD19A08CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Client\Website\Website.csproj", "{E0ABBBDB-D4C1-4615-9547-39C9E999C5BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessRules", "Framework\BusinessRules\BusinessRules.csproj", "{A5FA6C2C-310C-424A-8D52-C91A600986F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "Framework\DataAccess\DataAccess.csproj", "{B4732363-BB07-4527-96D4-DB6E2120BC0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataObjects", "Framework\DataObjects\DataObjects.csproj", "{57C3490D-F0EA-42ED-A6E8-1F1ADD358D41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Framework\Utility\Utility.csproj", "{43430E32-32AD-4B28-AF19-DC73B941CBDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Framework\Web\Web.csproj", "{AD155DAB-DE59-49EA-B372-324D43EAD3A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteTests", "WebsiteTests\WebsiteTests.csproj", "{88CD19C5-CC1F-4D3A-AE20-862B21627B9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0ABBBDB-D4C1-4615-9547-39C9E999C5BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0ABBBDB-D4C1-4615-9547-39C9E999C5BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0ABBBDB-D4C1-4615-9547-39C9E999C5BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0ABBBDB-D4C1-4615-9547-39C9E999C5BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5FA6C2C-310C-424A-8D52-C91A600986F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5FA6C2C-310C-424A-8D52-C91A600986F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5FA6C2C-310C-424A-8D52-C91A600986F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5FA6C2C-310C-424A-8D52-C91A600986F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4732363-BB07-4527-96D4-DB6E2120BC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4732363-BB07-4527-96D4-DB6E2120BC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4732363-BB07-4527-96D4-DB6E2120BC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4732363-BB07-4527-96D4-DB6E2120BC0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C3490D-F0EA-42ED-A6E8-1F1ADD358D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C3490D-F0EA-42ED-A6E8-1F1ADD358D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C3490D-F0EA-42ED-A6E8-1F1ADD358D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C3490D-F0EA-42ED-A6E8-1F1ADD358D41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43430E32-32AD-4B28-AF19-DC73B941CBDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43430E32-32AD-4B28-AF19-DC73B941CBDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43430E32-32AD-4B28-AF19-DC73B941CBDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43430E32-32AD-4B28-AF19-DC73B941CBDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD155DAB-DE59-49EA-B372-324D43EAD3A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD155DAB-DE59-49EA-B372-324D43EAD3A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD155DAB-DE59-49EA-B372-324D43EAD3A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD155DAB-DE59-49EA-B372-324D43EAD3A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88CD19C5-CC1F-4D3A-AE20-862B21627B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88CD19C5-CC1F-4D3A-AE20-862B21627B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88CD19C5-CC1F-4D3A-AE20-862B21627B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88CD19C5-CC1F-4D3A-AE20-862B21627B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E0ABBBDB-D4C1-4615-9547-39C9E999C5BB} = {189236E2-A7E3-413A-B486-08D3CB9001B3}
+		{A5FA6C2C-310C-424A-8D52-C91A600986F1} = {CA51CF3B-63C6-4D47-B7D5-25CBD19A08CA}
+		{B4732363-BB07-4527-96D4-DB6E2120BC0A} = {CA51CF3B-63C6-4D47-B7D5-25CBD19A08CA}
+		{57C3490D-F0EA-42ED-A6E8-1F1ADD358D41} = {CA51CF3B-63C6-4D47-B7D5-25CBD19A08CA}
+		{43430E32-32AD-4B28-AF19-DC73B941CBDC} = {CA51CF3B-63C6-4D47-B7D5-25CBD19A08CA}
+		{AD155DAB-DE59-49EA-B372-324D43EAD3A3} = {CA51CF3B-63C6-4D47-B7D5-25CBD19A08CA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

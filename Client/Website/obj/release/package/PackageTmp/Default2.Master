@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default2.master.cs" Inherits="Electracraft.Client.Website.Default2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="no-js" lang="en">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="ContentHead" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <asp:ContentPlaceHolder ID="ContentTitle" runat="server">
+        </asp:ContentPlaceHolder>
+        - On Track</title>
+    <link rel="stylesheet" href="styles/foundation.css" />
+    <link rel="Stylesheet" href="styles/app.css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../scripts/foundation/font/foundation-icons.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="sm1" runat="server" AsyncPostBackTimeout="36000" EnablePartialRendering="true" EnableHistory="True"></asp:ScriptManager>
+    <asp:PlaceHolder runat="server" Visible='<%# Request.Url.GetLeftPart(UriPartial.Authority).Contains("localhost") && !ParentPage.CurrentBRGeneral.IsLocalDatabase()  %>'>
+        <div style="background: red; color: #fff; text-align: center; padding: 0.6em 0 0.4em 0; font-weight: bold;">WARNING: You are connected to the live database</div>
+    </asp:PlaceHolder>
+<%--    <asp:PlaceHolder runat="server" Visible='<%# Request.Url.GetLeftPart(UriPartial.Authority).Contains("portal2-ecraft-co-nz.azurewebsites.net") %>'>
+        <div style="background: red; color: #fff; text-align: center; padding: 0.6em 0 0.4em 0; font-weight: bold;">TEST ENVIRONMENT</div>
+    </asp:PlaceHolder>--%>
+    <div class="main" style="background-color:#2982BE;">
+        <asp:Panel ID="pnlMessage" runat="server" EnableViewState="false" Visible="false" CssClass="row message">
+            <div class="small-12 columns">
+                <asp:Panel ID="pnlMessageClass" runat="server">
+                    <h3><asp:Literal ID="litMessage" runat="server"></asp:Literal></h3>
+                </asp:Panel>
+            </div>
+        </asp:Panel>
+
+        <asp:ContentPlaceHolder ID="ContentBody" runat="server">
+
+        </asp:ContentPlaceHolder>
+    <div class="row">
+        <div class="small-10 small-centered small-text-center medium-8 columns">
+            <p style="color: #e8e8e8; margin-top: 2em;">&copy;2014-<%= DateTime.UtcNow.Year %> Electracraft Limited</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">15/2/17 Version 2.8</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Updates:</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Altered login for individual only</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">During login you are are an employee of yourself</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Add company is now an option for individual customers</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">To come:</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">during company create you will also create yourself as an employee</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Business rules for add company for your individual customer</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Terms and conditions during login</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Terms and conditions when changed T&C versions</p>
+
+            <%--<p style="color: #e8e8e8; margin-top: 2em;">06/12/16 Version 2.7</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Updates:</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Fixed supplierinvoice importing negatives incorrectly</p>
+            --%>
+
+            <%--<p style="color: #e8e8e8; margin-top: 2em;">06/12/16 Version 2.6</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Using images in MaterialFromInvoice and JobsToInvoice</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Move site/ Move Job/ Move task working with permissions</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Removed lineitem column from csv exprt of invoice to fix xero bug</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Fixed supplierInvoice importing 0 items(backorder) no longer count as a SIM to assign, so the invoice disappears as it should now. </p>
+            --%>
+            <%--<p style="color: #e8e8e8; margin-top: 2em;">Version 2.5</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Updates:</p>
+            <p style="color: #e8e8e8; margin-top: 2em;"></p>
+            <p style="color: #e8e8e8; margin-top: 2em;"></p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Supplier Invoices View modifed with go to job feature - still in progress</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Invoicable tasks modified with goto task - still in progress</p>--%>
+            <%--<p style="color: #e8e8e8; margin-top: 2em;">Version 2.4</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Updates:</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Timesheet bug fixed</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Add task button fixed</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Supplier Invoices View added - still in progress</p>
+            <p style="color: #e8e8e8; margin-top: 2em;">Invoicable tasks added - still in progress</p>--%>
+        </div>
+    </div>
+    </div>
+
+    </form>
+    <script src="scripts/vendor/jquery.js"></script>
+    <script src="scripts/vendor/modernizr.js"></script>
+    <script src="scripts/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+//using System.Web;
+//using System.Web.UI;
+using System.Web.UI.WebControls;
+//using System.IO;
+//using System.Diagnostics;
+using Electracraft.Framework.DataObjects;
+using Electracraft.Framework.Web;
+using System.Web;
+using System.IO;
+using Electracraft.Framework.Utility;
+//using System.Collections;
+//using System.Data.SqlClient;
+
+namespace Electracraft.Client.Website
+{
+    public partial class ImportSupplierInvoices : PageBase
+    {
+        protected int PreviousChar=0;
+        protected bool myContinue=true;
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Constants.URL_ContactHome);
+        }
+
+        protected void btnImport_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect(Constants.URL_ImportSupplierInvoice);
+
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+        protected decimal CalculateSellPrice(decimal costprice)
+        {
+            decimal sellprice;
+            sellprice = costprice * 110 / 100;
+            if (costprice < 50) sellprice = costprice * 130 / 100;
+            if (costprice < 20) sellprice = costprice * 150 / 100;
+            if (costprice < 10) sellprice = costprice * 170 / 100;
+            if (costprice < 5) sellprice = costprice * 200 / 100;
+
+
+            return sellprice;
+
+        }
+        //---------------------------------------------------------------------------------------------
+        //
+        //                                   BELOW IS ADDING TO DATABASE FROM CSV FILES
+        //
+        //---------------------------------------------------------------------------------------------
+        protected void CorysDownload(DOMaterialFilePass DOM, string[,] Materials)
+        {
+            //-------------------
+            //CORYS SPECIFIC fill array              Jared to make sure no overload of array
+            //-------------------
+
+
+            //Get each char
+            DOM.intChar = (DOM.F.ReadByte());
+            DOM.c = (char)DOM.intChar;
+            // System.Diagnostics.Debug.Write(c);
+
+            if (DOM.CommaCount > 10)
+            {   //line feed(last char of record)
+                if (DOM.intChar == 10)
+                {
+                    DOM.CommaCount = 0;
+                    DOM.ColCount = 0;
+                    //new row
+                    DOM.RowCount++;
+                }
+            }
+           // System.Diagnostics.Debug.Write(DOM.c);
+
+            //if char = comma character then... i.e. a new column
+            if (DOM.intChar == 44 && PreviousChar==34)
+            {
+
+                DOM.ColCount++;
+                DOM.CommaCount++;
+                myContinue = true;
+
+                //last column of the row...
+
+            }
+            else //if char != comma
+            {
+                if (DOM.intChar != 13)//CR
+                {
+                    if (DOM.intChar != 10)//LF
+                    {
+                        if (DOM.intChar != 34)//"
+                        {
+                            Materials[DOM.RowCount, DOM.ColCount] = Materials[DOM.RowCount, DOM.ColCount] + DOM.c;
+                            
+                            //
+                            // 
+                            //
+
+                           // System.Diagnostics.Debug.Write(DOM.c + ", " + DOM.intChar + ", " +DOM.RowCount );
+                        }
+                    }
+                }
+            }
+
+
+            PreviousChar = DOM.intChar;
+            return;
+        }
+
+
+        protected void UploadButton_Click(object sender, EventArgs e)
+        {
+            bool ContinueFlag1 = false;
+            bool MaterialExistsInMaterialTable = false;
+            if (FileUploadControl.HasFile)//WORK WITH FILE
+            {
+
+                HttpPostedFile G;
+                HttpFileCollection uploadedFiles = Request.Files;
+                for (int i = 0; i < uploadedFiles.Count; i++)
+                {
+                    G = uploadedFiles[i];
+                    long Length = G.ContentLength;
+                    string Extension = Path.GetExtension(FileUploadControl.PostedFile.FileName);
+                    ContinueFlag1 = false;
+                    switch (Extension)
+                    {
+                        case ".csv":
+                            ContinueFlag1 = true;
+                            break;
+
+
+                    }
+
+
+
+                }
+                if (ContinueFlag1 == true)//file is uploaded
+                {
+
+                    G = uploadedFiles[0];
+
+                    System.IO.Stream F = G.InputStream;
+
+                    //System.IO.FileStream F = new System.IO.FileStream(@"D:\Projects\Electracraft App\trunk\test2.csv", System.IO.FileMode.Open, System.IO.FileAccess.ReadWrite);
+
+
+
+                    // alter above
+
+                    try
+                    {
+
+
+                        // if (FileUploadControl.PostedFile.ContentType == "image/jpeg/doc")
+                        //{
+
+
+                        //FileUploadControl.SaveAs(Server.MapPath("~/") + fileName);
+
+                        StatusLabel.Text = "Upload status: File uploaded!";
+                        //long Length = F.Length;
+                        long Length = F.Length;
+                        string[,] Materials = new string[9999, 12];
+
+                        DOMaterialFilePass DOM = new DOMaterialFilePass();
+                        DOM.F = F;
+                        DOM.intChar = 0;
+                        DOM.ColCount = 0;
+                        DOM.CommaCount = 1;
+                        System.Diagnostics.Debug.WriteLine("Adding file to array:");
+                        for (int iCount = 1; iCount <= Length; iCount++)
+                        {
+                            CorysDownload(DOM, Materials);
+                            if (DOM.ColCount == 3 && myContinue == true)
+                            {
+                                System.Diagnostics.Debug.WriteLine(Materials[DOM.RowCount, 2]);
+                                myContinue = false;
+                            }
+                           
+                        }
+                        System.Diagnostics.Debug.WriteLine("");
+                        System.Diagnostics.Debug.WriteLine("Complete!");
+
+
+                        int[] SupplierInvoiceAddedCount= new int[3];
+                        int[] NewMaterialsAddedCount= new int[2];
+                        
+
+
+                        List<DOBase> AllContactMaterials = CurrentBRJob.SelectMaterialsbyContactID(CurrentSessionContext.CurrentContact.ContactID);//electracraft id
+                        List<DOBase> AllSupplierInvoices = CurrentBRJob.SelectSupplierInvoicesInfoBySupplierID(Guid.Parse("BBBBBBBB-BBBB-BBBB-BBBB-BBBBBBBBBBBB"), CurrentSessionContext.CurrentContact.ContactID);//Corys id jARED !here!
+                        //System.Diagnostics.Debug.WriteLine(CurrentSessionContext.CurrentContact.ContactID.ToString());
+                        bool ContinueFlag = false;
+                        string strExistingMaterial = "";
+                        //int jCount = 0; 7/4
+                        string StrMaterialID = "";
+                        string StrSupplierInvoice = "";
+                        // string RecentSupplierID = "";
+
+                        //Loop through all cols and rows...
+                        // LOOP THROUGH ALL THE ROWS
+                        for (int iCount = 0; iCount < DOM.RowCount; iCount++)
+                        {
+
+                            SupplierInvoiceAddedCount[2]++;
+                            ContinueFlag = true;
+                            if (Materials[iCount, 0] == "HDR")   //CHECK hdr line
+                            {
+
+                                //SEE IF THIS SUPPLIERINVOICE ALREADY EXISTS
+                                foreach (DOSupplierInvoice SI in AllSupplierInvoices)
+                                {
+
+                                    if (SI.SupplierReference == Materials[iCount, 3])//changed from 3
+                                    {
+                                        ContinueFlag = false;
+                                        //System.Diagnostics.Debug.WriteLine("Record already exists: " + SI.SupplierReference);
+                                        break;
+
+                                    }
+                                  
+
+                                }
+                            }
+                            if (Materials[iCount, 0] == "HDR") SupplierInvoiceAddedCount[1]++;
+                            if (ContinueFlag) //SUPPLIERINVOICE DOES NOT ALREADY EXIST
+                            {
+
+                              
+                                if (Materials[iCount, 0] == "HDR")   //POPULATE SUPPLIERINVOICE TABLE
+                                {
+                                    SupplierInvoiceAddedCount[0]++;
+                                    // System.Diagnostics.Debug.WriteLine("");
+                                    //System.Diagnostics.Debug.WriteLine("--------------------------------------------------------------");
+                                    //  System.Diagnostics.Debug.WriteLine("                       Adding record: " + Materials[iCount, 7] + "    " + Materials[iCount, 8]);
+                                    //System.Diagnostics.Debug.WriteLine("--------------------------------------------------------------");
+                                    // System.Diagnostics.Debug.WriteLine("");
+
+                                    //good here. includes 0000
+
+                                    DOSupplierInvoice SupplierInvoice = new DOSupplierInvoice();
+                                    SupplierInvoice.SupplierInvoiceID = Guid.NewGuid();
+                                    StrSupplierInvoice = SupplierInvoice.SupplierInvoiceID.ToString();
+                                    SupplierInvoice.SupplierID = Guid.Parse("BBBBBBBB-BBBB-BBBB-BBBB-BBBBBBBBBBBB");// Materials[iCount, jCount]; //Corys supplierID
+                                    SupplierInvoice.InvoiceDate = DateTime.Parse(Materials[iCount, 4]);
+                                    SupplierInvoice.ContractorReference = Materials[iCount, 5];
+                                    SupplierInvoice.TotalExGst = decimal.Parse(Materials[iCount, 8]);
+                                    SupplierInvoice.SupplierReference = Materials[iCount, 3]; //changed from 7
+                                    SupplierInvoice.ContractorID = CurrentSessionContext.CurrentContact.ContactID;
+                                    //System.Diagnostics.Debug.WriteLine(SupplierInvoice.SupplierID);
+                                    //System.Diagnostics.Debug.WriteLine(SupplierInvoice.SupplierName);
+                                    SupplierInvoice.CreatedBy = CurrentSessionContext.Owner.ContactID;
+                                    SupplierInvoice.CreatedDate = DateTime.Now;
+
+                                    CurrentBRJob.SaveSupplierInvoice(SupplierInvoice);
+
+                                    //for (int jCount = 0; jCount < 12; jCount++) //loop through columns
+                                    //{
+                                }
+
+                                //ADDING MATERIALS, SEE IF THEY EXIST FIRST
+                               
+                                if (Materials[iCount, 0] != "HDR") //IF IT IS A LINE ITEM
+                                {
+                                    NewMaterialsAddedCount[1]++;
+                                    //jCount = 0; 7/4
+                                    foreach (DOMaterial mat in AllContactMaterials) //go thru all my materials
+                                    {
+                                        //jCount++; 7/4
+                                      //  System.Diagnostics.Debug.WriteLine("My materials: " + mat.MaterialName);
+
+
+                                        strExistingMaterial = mat.SupplierProductCode;
+                                        string strNewMaterial = Materials[iCount, 1];
+                                        //System.Diagnostics.Debug.WriteLine("");
+                                        //System.Diagnostics.Debug.WriteLine("                     attempting to add...          ");
+                                        if (strExistingMaterial == strNewMaterial)//new and old have the same supplierproductcode
+                                        {
+                                            //System.Diagnostics.Debug.WriteLine("");
+                                            //System.Diagnostics.Debug.WriteLine("--------");
+                                            
+                                            //System.Diagnostics.Debug.WriteLine("--------");
+                                            //System.Diagnostics.Debug.WriteLine("");
+
+                                            decimal newCostPrice = decimal.Parse(Materials[iCount, 8] + '0');
+                                            string newName = mat.MaterialName;
+
+                                            if (mat.CostPrice == newCostPrice)//IF SUPPLIERPRODUCTCODE IS SAME AND PRICE IS THE SAME THEN DONT ADD IT
+                                            {
+                                                if (newName == Materials[iCount, 2])
+                                                {
+                                                    StrMaterialID = mat.MaterialID.ToString();
+                                                    //MaterialExistsInMaterialTable = true;
+                                                    ContinueFlag = false; //removed 5/4/16 probably wrong to be here causing only one material per supplierinvoice to be added
+                                                                          //System.Diagnostics.Debug.WriteLine("");
+                                                                          // System.Diagnostics.Debug.WriteLine("");
+                                                                          //System.Diagnostics.Debug.WriteLine(mat.SupplierProductCode + "   This material matches existing item: " + Materials[iCount, 1] + ",  So has NOT been added to material table " + Materials[iCount, 2]);
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+
+
+                                    
+                                    if (ContinueFlag)//add supplier invoice material to material table if not already there
+                                    {
+                                        //System.Diagnostics.Debug.WriteLine("Product added:    " + Materials[iCount, 2] + ",    " + Materials[iCount, 1]);
+                                        NewMaterialsAddedCount[0]++;
+                                        //add supplier invoice material to material table if not already there
+                                        DOMaterial MaterialItem = new DOMaterial();
+                                        MaterialItem.SupplierID = Guid.Parse("BBBBBBBB-BBBB-BBBB-BBBB-BBBBBBBBBBBB");
+                                        MaterialItem.MaterialID = Guid.NewGuid();
+                                        StrMaterialID = MaterialItem.MaterialID.ToString();
+                                        MaterialItem.MaterialName = Materials[iCount, 2];
+                                        MaterialItem.SupplierProductCode = Materials[iCount, 1];
+                                        MaterialItem.UOM = Materials[iCount, 5];
+                                        MaterialItem.CostPrice = decimal.Parse(Materials[iCount, 8]);
+                                        MaterialItem.RRP = decimal.Parse(Materials[iCount, 7]);
+                                        MaterialItem.CreatedBy = CurrentSessionContext.Owner.ContactID;
+                                        MaterialItem.CreatedDate = DateTime.Now;
+
+
+                                        //MaterialItem.
+
+                                        //MaterialItem.SellPrice =
+
+
+
+                                        //todo WORK OUT SELL PRICE. - to do logic at some point. user defined variables.
+
+
+
+
+
+                                        MaterialItem.SellPrice = CalculateSellPrice(MaterialItem.CostPrice);
+                                        MaterialItem.MaterialCategoryID = Guid.Parse("ccccdddd-dddd-dddd-dddd-ddddccccdddd");
+                                        //System.Diagnostics.Debug.WriteLine(MaterialItem.RRP);
+                                        MaterialItem.ContactID = CurrentSessionContext.CurrentContact.ContactID;
+                                        CurrentBRJob.SaveMaterial(MaterialItem);
+                                        AllContactMaterials.Add(MaterialItem);
+                                       // System.Diagnostics.Debug.WriteLine("                          __________________________________");
+                                        //System.Diagnostics.Debug.WriteLine("                          Amount of Allcontactmaterials: " + AllContactMaterials.Count());
+                                        //System.Diagnostics.Debug.WriteLine("                          __________________________________");
+                                    }
+
+
+
+
+                                        //add to table SupplierInvoiceMaterial  
+                                        if (StrSupplierInvoice != "")
+                                        {
+                                            DOSupplierInvoiceMaterial SIMaterial = new DOSupplierInvoiceMaterial();
+                                            SIMaterial.SupplierInvoiceMaterialID = Guid.NewGuid();
+                                            SIMaterial.MaterialID = Guid.Parse(StrMaterialID);
+                                            SIMaterial.SupplierInvoiceID = Guid.Parse(StrSupplierInvoice);
+                                            SIMaterial.Qty = decimal.Parse(Materials[iCount, 6]);
+                                            SIMaterial.QtyRemainingToAssign = decimal.Parse(Materials[iCount, 6]);
+                                            SIMaterial.ContractorID = CurrentSessionContext.CurrentContact.ContactID;
+                                            SIMaterial.Assigned = false;
+                                            SIMaterial.CreatedBy = CurrentSessionContext.Owner.ContactID;
+                                            SIMaterial.CreatedDate = DateTime.Now;
+                                            CurrentBRJob.SaveSupplierInvoiceMaterial(SIMaterial);
+                                        //increment supplierinvoice.status by 1
+
+                                        //char increment = '+';
+                                        CurrentBRJob.UpdateSupplierInvoiceStatus(Guid.Parse(StrSupplierInvoice), "+");
+
+
+                                    }
+                                        //1. NEED TO CHECK IF MATERIAL EXISTS IN MATERIALS TABLE. IF NOT THEN ENTER NEW MATERIAL-----done
+
+
+                                        //2. SELECT MATERIAL AND ADD NEW ENTRY INTO SUPPLIERINVOICEMATERIAL and CONTAINERINVOICE TABLES and qty. THIS HAPPENS
+                                        //   REGARDLESS IF MATERIAL EXISTS, BUT NOT IF SUPPLIERINVOICE EXISTS
+
+
+
+
+                                        // System.Diagnostics.Debug.WriteLine(AllMaterials[0]);
+
+                                    
+
+
+                                }
+
+
+
+
+
+
+                            }
+
+
+                        }
+                        System.Diagnostics.Debug.WriteLine("Supplier invoices added: " + SupplierInvoiceAddedCount[0] + "/" + SupplierInvoiceAddedCount[1] + " New materials added: " + NewMaterialsAddedCount[0] + "/" + NewMaterialsAddedCount[1] + " Total lines: " + SupplierInvoiceAddedCount[2]);
+                        System.Diagnostics.Debug.WriteLine("Transaction complete!");
+
+                        //F.close();
+                    }
+
+                    //Console.ReadKey();
+
+                    //   else
+                    // StatusLabel.Text = "Upload status: Only JPEG files are accepted!";
+
+
+                    catch (Exception ex)
+                    {
+                        StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message + ex.StackTrace.ToString();
+
+                        //StatusLabel.Text=
+                    }//
+                    finally
+                    {
+                        // F.Close();
+                    }
+
+                }
+            }
+        }
+    }
+}
